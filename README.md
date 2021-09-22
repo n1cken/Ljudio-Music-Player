@@ -1,4 +1,4 @@
-# LJUDIO :music:
+# LJUDIO
 
 ## Music Player
 
