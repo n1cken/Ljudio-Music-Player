@@ -5,7 +5,9 @@ function AboutPage() {
 
     return (
         <div>
-            Hej hej detta är om oss!    
+            Hej hej detta är om oss! 
+
+            Test Commit2  
         </div>
     )
 }
