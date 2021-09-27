@@ -1,8 +1,10 @@
 
-import './App.css';
+import './styles/App.css';
+import Player from './components/Player';
 import Backward from './assets/svgFiles/backward-solid.svg';
 import play from './assets/svgFiles/play-solid.svg';
 import forward from './assets/svgFiles/forward-solid.svg';
+
 
 import {
   BrowserRouter as Router,
@@ -33,14 +35,11 @@ function App() {
         <Route path="/ProductPage/:videoId" component={ProductPage} />
       </main>
 
-      <div class="bottom">
-        <div></div>
-        <img src={Backward} alt="backwards" />
-        <img src={play} alt="play" />
-        <img src={forward} alt="forward" />
-        <div></div>
-      </div>
+
+
+        <Player/>
     </Router>
+
   );
 }
 
