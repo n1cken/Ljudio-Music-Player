@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Ljudio-Music-Player.iml" filepath="$PROJECT_DIR$/.idea/Ljudio-Music-Player.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/backend/ljudio.iml" filepath="$PROJECT_DIR$/src/backend/ljudio.iml" />
     </modules>
   </component>
 </project>
