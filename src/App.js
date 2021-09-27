@@ -1,8 +1,8 @@
 
 import './App.css';
-import Backward from './svgFiles/backward-solid.svg';
-import play from './svgFiles/play-solid.svg';
-import forward from './svgFiles/forward-solid.svg';
+import Backward from './assets/svgFiles/backward-solid.svg';
+import play from './assets/svgFiles/play-solid.svg';
+import forward from './assets/svgFiles/forward-solid.svg';
 
 import {
   BrowserRouter as Router,
