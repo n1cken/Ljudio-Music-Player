@@ -1,0 +1,1 @@
+let searchActivated = false;
