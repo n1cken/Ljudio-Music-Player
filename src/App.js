@@ -1,7 +1,7 @@
 
 import './styles/App.css';
 import Player from './components/Player';
-import TopBar from './components/TopBar'
+import TopBar from './components/TopBar';
 
 
 function App() {

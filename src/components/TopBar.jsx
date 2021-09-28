@@ -9,6 +9,9 @@ import StartPage from '../pages/StartPage';
 import AboutPage from '../pages/AboutPage';
 import ContactPage from '../pages/ContactPage';
 import ProductPage from '../pages/ProductPage';
+import Home from "../assets/svgFiles/home.svg";
+
+import '../styles/TopBar.css';
 
 class TopBar extends React.Component {
     constructor(props) {
@@ -25,7 +28,10 @@ class TopBar extends React.Component {
                 <Router>
 
                 <nav className="top">
-                    <Link to="/"> Start </Link>
+                    <Link to="/">
+                       <img src={Home} alt="backwards" className="homeButton"/>
+                    </Link>
+
                     <Link to="/AboutPage"> About </Link>
                     <Link to="/ContactPage"> Contact </Link>
                     <Link to="/ProductPage"> Products </Link>
