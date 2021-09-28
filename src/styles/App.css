@@ -14,3 +14,15 @@ background-color: #e5e5e5;
   padding: 40px;
   background-color: #c4c4c4;
 }
+
+@media only screen and (max-width: 1024px) {
+  /* For mobile phones: */
+  .top {
+    display: block;
+    width: 100%;
+    height: 70px;
+  }
+  a {
+    visibility: hidden;
+  }
+}
