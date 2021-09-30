@@ -14,11 +14,11 @@ class Player extends React.Component {
     render() {
         return (
             <div>
-                <div className="bottom">1
+                <div className="bottom">
                     <div></div>
-                    <img src={Backward} alt="backwards"/>
-                    <img src={play} alt="play"/>
-                    <img src={forward} alt="forward"/>
+                    <img src={Backward} alt="backwards" />
+                    <img src={play} alt="play" />
+                    <img src={forward} alt="forward" />
                     <div></div>
                 </div>
             </div>
