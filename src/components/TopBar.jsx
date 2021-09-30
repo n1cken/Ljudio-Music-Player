@@ -6,9 +6,9 @@ import {
 } from 'react-router-dom';
 
 import StartPage from '../pages/StartPage';
-import AboutPage from '../pages/AboutPage';
-import ContactPage from '../pages/ContactPage';
 import ProductPage from '../pages/ProductPage';
+import SearchField from "./SearchField";
+
 import Home from "../assets/svgFiles/home.svg";
 import Search from "../assets/svgFiles/search.svg";
 
@@ -43,6 +43,8 @@ class TopBar extends React.Component {
                     <Link to="/">
                        <img src={Home} alt="backwards" className="homeButton"/>
                     </Link>
+
+                    {this.state.searchActivated ? <SearchField/> : null }
 
                     <button onClick={this.activateSearch}>
                         <img src={Search} alt="search" className="searchButton"/>
