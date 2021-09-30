@@ -6,10 +6,11 @@ import TopBar from './components/TopBar';
 
 function App() {
   return (
-<div>
-        <TopBar/>
-        <Player/>
-</div>
+    <div>
+      <TopBar />
+
+      <Player />
+    </div>
   );
 }
 

@@ -1,0 +1,50 @@
+
+.hamburgerDiv{
+    background-color: #c4c4c4;
+}
+.hamburgerItems{
+    position: absolute;
+    left: 0;
+    margin: 70px 0px 0px 0px;
+
+}
+a:link {
+  text-decoration: none;
+  color: black;
+}
+
+a:visited {
+  text-decoration: none;
+    color: black;
+}
+a:hover {
+    color: whitesmoke;
+}
+
+.hamburgerItems a{
+    padding: 0;
+    background-color: #c4c4c4
+    
+}
+.hamburgerItems a p{
+    margin: 0;
+    font-size: 40px;
+    padding: 20px 20px 20px 20px;
+}
+.Hamburgermenu{
+    background-image: url(../assets/svgFiles/bars-solid.svg);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-color: #c4c4c4;
+    height: 50px;
+  width: 50px;
+  border: none;
+  transition: background-color 300ms;
+  border-radius: 60%;
+}
+.Hamburgermenu:hover{
+    cursor: pointer;
+    background-color: rgb(210, 228, 243);
+}
+
+
