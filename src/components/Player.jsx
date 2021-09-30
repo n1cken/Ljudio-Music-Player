@@ -14,7 +14,7 @@ class Player extends React.Component {
     render() {
         return (
             <div>
-                <div className="bottom">
+                <div className="bottom">1
                     <div></div>
                     <img src={Backward} alt="backwards"/>
                     <img src={play} alt="play"/>

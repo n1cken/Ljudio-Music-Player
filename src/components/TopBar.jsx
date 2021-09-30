@@ -10,6 +10,7 @@ import AboutPage from '../pages/AboutPage';
 import ContactPage from '../pages/ContactPage';
 import ProductPage from '../pages/ProductPage';
 import Home from "../assets/svgFiles/home.svg";
+import Search from "../assets/svgFiles/search.svg";
 
 import '../styles/TopBar.css';
 
@@ -32,16 +33,14 @@ class TopBar extends React.Component {
                        <img src={Home} alt="backwards" className="homeButton"/>
                     </Link>
 
-                    <Link to="/AboutPage"> About </Link>
-                    <Link to="/ContactPage"> Contact </Link>
-                    <Link to="/ProductPage"> Products </Link>
+                    <Link onClick={Home}>
+                        <img src={Search} alt="search" className="searchButton"/>
+                    </Link>
+
                 </nav>
 
                 <main>
                     <Route path="/" exact component={StartPage} />
-                    <Route path="/AboutPage" exact component={AboutPage} />
-                    <Route path="/ContactPage" exact component={ContactPage} />
-                    <Route path="/ProductPage" exact component={ProductPage} />
                     <Route path="/ProductPage/:videoId" component={ProductPage} />
                 </main>
 
