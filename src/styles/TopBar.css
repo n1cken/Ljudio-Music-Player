@@ -4,7 +4,31 @@
     width : 60px;
 }
 
+.searchDiv {
+    height: 60px;
+    width : 60px;
+}
+
 .searchButton {
     height: 60px;
     width : 60px;
+}
+
+.searchField>form {
+    background-color: rgba(0, 0, 0, 0);
+    width: 50vw;
+}
+
+.searchField>form>input {
+    font-size: 60px;
+}
+
+.searchField>form>button {
+    height: 15vh;
+    width: 19%;
+}
+
+#header-search {
+    height: 15vh;
+    width: 78%;
 }

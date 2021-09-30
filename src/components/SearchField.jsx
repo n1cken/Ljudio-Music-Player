@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 
+import '../styles/TopBar.css'
+
 class SearchField extends Component {
     render() {
         return (

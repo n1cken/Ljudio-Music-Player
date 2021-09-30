@@ -46,9 +46,9 @@ class TopBar extends React.Component {
 
                     {this.state.searchActivated ? <SearchField/> : null }
 
-                    <button onClick={this.activateSearch}>
+                    <div className="searchDiv" onClick={this.activateSearch}>
                         <img src={Search} alt="search" className="searchButton"/>
-                    </button>
+                    </div>
 
                 </nav>
 
