@@ -19,8 +19,19 @@ class TopBar extends React.Component {
         super(props);
         this.state = {
             searchActivated : false
-        };
+        }
 
+        /* Binds this function to the instance of this class.
+        Otherwise, activateSearch will try to setState the Button */
+        this.activateSearch = this.activateSearch.bind(this);
+    }
+
+  activateSearch () {
+        this.setState( { searchActivated : true })
+
+        if (this.state.searchActivated === true) {
+            this.setState( { searchActivated : false })
+        }
     }
 
     render() {
@@ -33,9 +44,9 @@ class TopBar extends React.Component {
                        <img src={Home} alt="backwards" className="homeButton"/>
                     </Link>
 
-                    <Link onClick={Home}>
+                    <button onClick={this.activateSearch}>
                         <img src={Search} alt="search" className="searchButton"/>
-                    </Link>
+                    </button>
 
                 </nav>
 
