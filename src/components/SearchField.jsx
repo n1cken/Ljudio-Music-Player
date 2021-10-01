@@ -11,7 +11,7 @@ class SearchField extends Component {
                     <input
                         type="text"
                         id="header-search"
-                        placeholder="I want to listen to.."
+                        placeholder="I want to listen to ..."
                         name="s"
                     />
                     <button type="submit">Search</button>

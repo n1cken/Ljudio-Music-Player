@@ -33,3 +33,23 @@
     height: 15vh;
     width: 78%;
 }
+
+
+@media only screen and (max-width: 1024px) {
+    /* For mobile phones */
+    .searchField>form {
+        background-color: rgba(0, 0, 0, 0);
+        width: 40vw;
+    }
+
+
+    .searchField>form>button {
+        height: 15.5vh;
+        width: 14%;
+        position:absolute;
+    }
+
+    .searchField>form>input {
+        font-size: 30px;
+    }
+}
