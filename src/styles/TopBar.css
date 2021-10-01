@@ -24,8 +24,9 @@
 }
 
 .searchField>form>button {
-    height: 15vh;
+    height: 15.5vh;
     width: 19%;
+    padding-top: 34px;
 }
 
 #header-search {
