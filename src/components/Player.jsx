@@ -16,9 +16,6 @@ class Player extends React.Component {
         }
         }
 
-
-
-
     playOrPause() {
         if (!this.state.isPlaying) {
             document.getElementById("playPause").src = play;
