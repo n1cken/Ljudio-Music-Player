@@ -6,21 +6,28 @@ import forward from "../assets/svgFiles/forward-solid.svg";
 
 import '../styles/Player.css';
 
-let isPlaying = false;
+
 
 class Player extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {};
-    }
+        this.state = {
+                isPlaying : localStorage.getItem('playPause')
+        }
+        }
+
+
+
 
     playOrPause() {
-        if (isPlaying == false) {
+        if (!this.state.isPlaying) {
             document.getElementById("playPause").src = play;
-            isPlaying = true;
+            this.setState({isPlaying: true})
+            localStorage.setItem("playPause", this.state.isPlaying)
         } else {
             document.getElementById("playPause").src = pause;
-            isPlaying = false;
+            this.setState({isPlaying : false})
+            localStorage.setItem("playPause", this.state.isPlaying)
         }
     }
 
@@ -30,7 +37,7 @@ class Player extends React.Component {
                 <div className="bottom">
                     <div></div>
                     <img src={Backward} alt="backwards" />
-                    <img src={pause} alt="play" id="playPause" onClick={this.playOrPause} />
+                    <img src={pause} alt="play" id="playPause" onClick={() => {this.playOrPause()}} />
                     <img src={forward} alt="forward" />
                     <div></div>
                 </div>
