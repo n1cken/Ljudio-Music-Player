@@ -1,8 +1,8 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 
-function ProductPage() {
-    
+function PlayingPage() {
+
     const { videoId } = useParams()
 
     console.log(videoId)
@@ -11,9 +11,9 @@ function ProductPage() {
     return (
         <div>
             <h3>videoId: {videoId}</h3>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam error nulla cupiditate?</p>
+            <p>This page will show current song that is played</p>
         </div>
     )
 }
 
-export default ProductPage
+export default PlayingPage

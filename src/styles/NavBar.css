@@ -5,7 +5,8 @@
 .hamburgerItems{
     position: absolute;
     left: 0;
-    margin: 70px 0px 0px 0px;
+    margin: 30px 0px 0px 0px;
+    background-color: #c4c4c4;
 
 }
 a:link {
