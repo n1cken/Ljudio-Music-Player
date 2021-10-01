@@ -1,6 +1,6 @@
 import React from 'react'
 
-function ContactPage() {
+function SearchPage() {
     return (
         <div>
             Welcome to contact us.
@@ -8,4 +8,4 @@ function ContactPage() {
     )
 }
 
-export default ContactPage
+export default SearchPage
