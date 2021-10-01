@@ -3,7 +3,7 @@ import React from 'react'
 function SearchPage() {
     return (
         <div>
-            Welcome to contact us.
+            This page will show content of searched object
         </div>
     )
 }

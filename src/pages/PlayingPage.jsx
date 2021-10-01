@@ -11,7 +11,7 @@ function PlayingPage() {
     return (
         <div>
             <h3>videoId: {videoId}</h3>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam error nulla cupiditate?</p>
+            <p>This page will show current song that is played</p>
         </div>
     )
 }
