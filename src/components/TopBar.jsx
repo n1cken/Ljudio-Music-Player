@@ -57,9 +57,10 @@ class TopBar extends React.Component {
                                 <p>About Page</p>
                             </Link>
                         </Navbar>
-                        <Link to="/">
+
+                        {!this.state.searchActivated ? <Link to="/">
                             <img src={Home} alt="backwards" className="homeButton" />
-                        </Link>
+                        </Link> : null}
 
                         {this.state.searchActivated ? <SearchField /> : null}
 
