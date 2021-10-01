@@ -5,7 +5,7 @@ import '../styles/StartPage.css'
 function HomePage() {
   return (
     <div className="homePage">
-      Welcome, please search for a song.
+      This page will show latest songs played
     </div>
   )
 }
