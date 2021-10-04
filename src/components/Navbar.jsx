@@ -10,7 +10,7 @@ function Navbar(props) {
 
     <div className="hamburgerDiv">
       <button type="button" src={Hamburgermenu} alt="menu" className="Hamburgermenu" onClick={() => setStatus(!status)} />
-      <p className="hamburgerItems">{status && props.children}</p>
+      <p className="hamburgerItems" onClick={() => setStatus(!status)}>{status && props.children}</p>
     </div>
 
 
