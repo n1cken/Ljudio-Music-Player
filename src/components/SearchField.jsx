@@ -1,11 +1,18 @@
-import React, {Component} from 'react';
+import React, {Component, useState} from 'react';
 
 import '../styles/TopBar.css'
 import Search from "../assets/svgFiles/search.svg";
 
-class SearchField extends Component {
-    render() {
-        return (
+const SearchField = () => {
+
+    const [search, setSearch] = useState('')
+
+    function updateText (e) {
+        setSearch(e.target.value)
+        console.log(e.target.value)
+    }
+
+    return (
             <div className={"searchField"}>
 
                 <form action="" method="get">
@@ -14,6 +21,8 @@ class SearchField extends Component {
                         id="header-search"
                         placeholder="I want to listen to ..."
                         name="s"
+                        onChange={updateText}
+                        value={search}
                     />
                     <button type="submit" class="buttonSearch"> <img src={Search} alt="search" className="searchIcon" />
                     </button>
@@ -21,7 +30,6 @@ class SearchField extends Component {
 
             </div>
         );
-    }
 }
 
-export default SearchField;
+export default SearchField
