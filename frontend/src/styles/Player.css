@@ -1,4 +1,6 @@
 .bottom{
+    display:grid;
+    grid-row: 2;
     justify-content: space-between;
     position: fixed;
     bottom: 0;
@@ -6,11 +8,7 @@
     height: 70px;
     background-color: #c4c4c4;
     display: flex;
-    padding-top: 40px;
+    padding-top: 20px;
     padding-bottom: 40px;
     padding-right: 50px;
-}
-
-img{
-    background-color: #c4c4c4;
 }

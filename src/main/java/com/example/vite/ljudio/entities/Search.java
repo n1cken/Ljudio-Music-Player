@@ -12,8 +12,6 @@ import javax.persistence.*;
 @Entity
 @Table(name = "searchhistory")
 
-
-
 public class Search {
 
     @Id
