@@ -1,10 +1,12 @@
 import React, {Component, useState} from 'react';
+import { useHistory } from 'react-router-dom'
 
 import '../styles/TopBar.css'
 import Search from "../assets/svgFiles/search.svg";
 
 const SearchField = () => {
 
+    const history = useHistory()
     const [search, setSearch] = useState('')
 
     function updateText (e) {
@@ -12,10 +14,17 @@ const SearchField = () => {
         console.log(e.target.value)
     }
 
+    function submitButton (e) {
+        e.preventDefault();
+
+        history.push('/searchpage/'+ search)
+
+    }
+
     return (
             <div className={"searchField"}>
 
-                <form action="" method="get">
+                <form onSubmit={submitButton}>
                     <input
                         type="text"
                         id="header-search"

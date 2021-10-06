@@ -40,7 +40,7 @@ class TopBar extends React.Component {
     render() {
         return (
             <div>
-                <Router>
+
 
                     <nav className="top">
                         <Navbar>
@@ -72,14 +72,7 @@ class TopBar extends React.Component {
 
                     </nav>
 
-                    <main>
-                        <Route path="/searchpage" exact component={SearchPage} />
-                        <Route path="/playingpage" exact component={PlayingPage} />
-                        <Route path="/" exact component={HomePage} />
-                        <Route path="/playingPage/:videoId" component={PlayingPage} />
-                    </main>
 
-                </Router>
             </div>
         );
     }
