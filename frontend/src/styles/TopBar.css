@@ -17,8 +17,6 @@
 .searchIcon {
     height: 30px;
     width : 30px;
-    margin-bottom: 20px;
-    margin-right: 100px;
 }
 
 .searchField>form {
@@ -29,7 +27,7 @@
 
 .searchDiv {
     margin-left: 30px;
-    margin-top:30px;
+    margin-top:10px;
 }
 
 .searchField>form>button {
