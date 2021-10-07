@@ -8,7 +8,6 @@ function PlayingPage() {
 
     const { videoId } = useParams()
 
-    /* When clicking on song, array resultFromSearch will be pushed with info of that song */
     useEffect(() => {
         fetch(url + videoId)
             .then(res => res.json())
