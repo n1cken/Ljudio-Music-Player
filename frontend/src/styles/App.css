@@ -8,17 +8,19 @@ font-family: 'Sora', sans-serif;
 
 .top {
   overflow: paged-x;
-  font-size: 60px;
+  font-size: 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 40px;
+  horiz-align: center;
+  padding: 30px;
   background-color: #c4c4c4;
+  height: 20px;
 }
 
 @media only screen and (max-width: 1024px) {
   /* For mobile phones: */
   .top {
-    height: 70px;
+    height: 20px;
   }
 }

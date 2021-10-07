@@ -6,7 +6,10 @@
     height: 70px;
     background-color: #c4c4c4;
     display: flex;
-    padding-top: 20px;
-    padding-bottom: 20px;
     padding-right: 50px;
+}
+
+.controlButton {
+    height: 35px;
+    width: 35px;
 }
