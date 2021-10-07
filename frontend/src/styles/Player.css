@@ -1,6 +1,4 @@
 .bottom{
-    display:grid;
-    grid-row: 2;
     justify-content: space-between;
     position: fixed;
     bottom: 0;

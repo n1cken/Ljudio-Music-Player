@@ -5,7 +5,9 @@
 font-family: 'Sora', sans-serif;
 }
 
+
 .top {
+  overflow: paged-x;
   font-size: 60px;
   display: flex;
   justify-content: space-between;

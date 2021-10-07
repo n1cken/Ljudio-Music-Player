@@ -22,7 +22,7 @@ class PlayerInformation extends Component {
 
     render() {
         return (
-            <div className="information">
+            <footer className="information">
                 <div className="songText"> {this.state.song}</div>
                 <div className="artistText">{this.state.artist} </div>
 
@@ -36,7 +36,7 @@ class PlayerInformation extends Component {
                            onInput={this.handleVolume}
                     />
                 </div>
-            </div>
+            </footer>
         );
     }
 }

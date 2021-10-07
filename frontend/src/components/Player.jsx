@@ -30,17 +30,13 @@ class Player extends React.Component {
     render() {
         return (
             <div>
-
-                <PlayerInformation />
-
-                <div className="bottom">
-
+                <footer className="bottom">
                     <div></div>
                     <img src={Backward} alt="backwards" />
                     <img src={pause} alt="play" id="playPause" onClick={() => { this.playOrPause() }} />
                     <img src={forward} alt="forward" />
                     <div></div>
-                </div>
+                </footer>
             </div>
         );
     }
