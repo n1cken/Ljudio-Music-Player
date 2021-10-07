@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import {useHistory, useParams} from 'react-router-dom'
 
 function SearchPage() {
     const url = 'https://yt-music-api.herokuapp.com/api/yt/songs/'
@@ -8,6 +8,7 @@ function SearchPage() {
 
     const { search } = useParams()
 
+    const history = useHistory()
 
     useEffect(() => {
 
@@ -19,6 +20,8 @@ function SearchPage() {
 
     function songClick(song) {
         console.log(song.name)
+        const videoId = song.videoId
+        history.push('/playingpage/' + videoId)
     }
 
     return (

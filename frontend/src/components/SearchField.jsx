@@ -17,7 +17,7 @@ const SearchField = () => {
 
     async function submitButton(e) {
         e.preventDefault();
-        history.push('/searchpage/' + search)
+            history.push('/searchpage/' + search)
     }
 
 
