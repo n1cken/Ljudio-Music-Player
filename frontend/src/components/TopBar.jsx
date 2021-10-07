@@ -21,13 +21,15 @@ class TopBar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            searchActivated: false
+            searchActivated: true,
+            pathname : window.location.pathname
         }
 
         /* Binds this function to the instance of this class.
         Otherwise, activateSearch will try to setState the Button */
         this.activateSearch = this.activateSearch.bind(this);
     }
+
 
     activateSearch() {
         this.setState({ searchActivated: true })

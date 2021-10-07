@@ -5,6 +5,20 @@
 font-family: 'Sora', sans-serif;
 }
 
+main {
+  padding-bottom: 400px;
+}
+
+.playingPage {
+  text-align: center;
+}
+
+.albumText {
+  font-weight: lighter;
+  color: darkgrey;
+}
+
+
 
 .top {
   overflow: paged-x;

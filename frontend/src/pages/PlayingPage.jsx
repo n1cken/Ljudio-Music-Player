@@ -26,16 +26,13 @@ function PlayingPage() {
     })
 
     return (
-        <div>
+        <div className="playingPage">
             <h3>videoId: {videoId}</h3>
-            <div> <img src={song.img} width={song.imgW} height={song.imgH} alt="img"/> </div>
+            <div> <img className="albumimg" src={song.img} width="200px" height="200px" alt="img"/> </div>
 
-            <h3>{song.name}</h3>
+            <h2>{song.name}</h2>
             <h3>{song.artist}</h3>
-            <h3>{song.album}</h3>
-            <h3>{song.name}</h3>
-
-            <p>This page will show current song that is played</p>
+            <h3 className="albumText">{song.album}</h3>
         </div>
     )
 }
