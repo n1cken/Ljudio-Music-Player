@@ -53,11 +53,13 @@ function PlayingPage() {
 
     return (
         <div className="playingPage">
-            <h3>videoId: {videoId}</h3>
+
             <div> <img className="albumimg" src={song.img} width="200px" height="200px" alt="img" /> </div>
-            <h2>{song.name}</h2>
-            <h3>{song.artist}</h3>
-            <h3 className="albumText">{song.album}</h3>
+            <div className="playingPageSong">{song.name}</div>
+            <div className="playingPageArtist">{song.artist}</div>
+            <h3 className="playingPageAlbum">{song.album}</h3>
+
+
             <div id="yt-player" ></div>
             <button onClick={playSong}> play</button>
             <button onClick={pauseSong}> pause</button>

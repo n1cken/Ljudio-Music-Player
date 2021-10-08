@@ -6,19 +6,34 @@ font-family: 'Sora', sans-serif;
 }
 
 main {
-  padding-bottom: 400px;
+  padding-bottom: 220px;
 }
 
 .playingPage {
   text-align: center;
 }
 
-.albumText {
+.albumimg {
+  margin-top: 4vh;
+  width: 26vh;
+  height: 26vh;
+}
+
+.playingPageSong {
+  margin-top: 2vh;
+  font-size: 3vh;
+  max-font-size: 2vw;
+}
+
+.playingPageArtist {
+  font-size: 2vh;
+}
+
+.playingPageAlbum {
+  font-size: 2vh;
   font-weight: lighter;
   color: darkgrey;
 }
-
-
 
 .top {
   overflow: paged-x;
