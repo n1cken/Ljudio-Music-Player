@@ -1,5 +1,6 @@
 .top {
     background-color: #E6B84C;
+    height: 6vh;
 }
 
 .homeButton{
@@ -18,25 +19,24 @@
     font: inherit;
     cursor: pointer;
     outline: inherit;
+
 }
 
 .searchIcon {
-    height: 35px;
-    width : 35px;
-    margin-bottom: 20px;
+    height: 40px;
+    width : 40px;
+    margin-bottom: 5vh;
     background-color: #E6B84C;
 }
 
 .searchField>form {
     background-color: rgba(0, 0, 0, 0);
     width: 40vw;
-    font-size: 30px;
-
 }
 
 .searchDiv {
     margin-left: 30px;
-    margin-top:30px;
+    margin-top:5vh;
 }
 
 .searchField>form>button {
@@ -48,7 +48,7 @@
 
 #header-search {
     color: #141414;
-    height:7vh;
+    height:6vh;
     width: 78%;
     border-radius:20px;
     -moz-border-radius:20px;
@@ -57,6 +57,7 @@
     border: 0 solid;
     box-shadow: -1px 1px 4px 0px #000000;
     background-color: snow;
+    font-size:22px;
 }
 
 
