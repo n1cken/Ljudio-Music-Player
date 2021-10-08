@@ -50,6 +50,7 @@ main:after {
 }
 
 .albumimg {
+  border: 1px solid white;
   margin-top: 4vh;
   width: 26vh;
   height: 26vh;
