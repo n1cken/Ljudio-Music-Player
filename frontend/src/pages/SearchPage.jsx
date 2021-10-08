@@ -26,7 +26,7 @@ function SearchPage() {
 
     return (
         <div>
-            <h2>Songs:</h2>
+            <div className="songHeader">Songs</div>
             {songs && songs.map(song => (
                 <div onClick={() => songClick(song)}>{song.name}</div>
             ))}

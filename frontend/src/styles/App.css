@@ -3,10 +3,46 @@
 
 *{
 font-family: 'Sora', sans-serif;
+  color: snow;
+}
+
+.top {
+  background-color: #423E37;
 }
 
 main {
   padding-bottom: 220px;
+  background-color: #141414;
+}
+
+/* To make full background in main black */
+main:after {
+  background-color: #141414;
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: -1;
+}
+
+/* Player buttons on PlayingSite! To be removed */
+.playingPageButton {
+  background-color: #141414;
+  color: inherit;
+  border: 1px solid white;
+  padding: 1vh;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+.songHeader {
+  font-size: 5vh;
+  padding-top: 6vh;
+  padding-bottom: 3vh;
 }
 
 .playingPage {
@@ -23,10 +59,12 @@ main {
   margin-top: 2vh;
   font-size: 3vh;
   max-font-size: 2vw;
+  color: #E6B84C;
 }
 
 .playingPageArtist {
   font-size: 2vh;
+  color: #E6B84C;
 }
 
 .playingPageAlbum {

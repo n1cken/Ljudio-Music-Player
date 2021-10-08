@@ -61,9 +61,9 @@ function PlayingPage() {
 
 
             <div id="yt-player" ></div>
-            <button onClick={playSong}> play</button>
-            <button onClick={pauseSong}> pause</button>
-            <button onClick={resumeSong}>Resume</button>
+            <button  className="playingPageButton" onClick={playSong}> play</button>
+            <button  className="playingPageButton"onClick={pauseSong}> pause</button>
+            <button  className="playingPageButton"onClick={resumeSong}>Resume</button>
         </div>
     )
 }

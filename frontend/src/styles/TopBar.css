@@ -1,7 +1,13 @@
+.top {
+    background-color: #E6B84C;
+}
+
 .homeButton{
     background-color: #c4c4c4;
     height: 30px;
     width : 30px;
+    margin-top: 10px;
+    background-color: #E6B84C;
 }
 
 .buttonSearch {
@@ -15,16 +21,17 @@
 }
 
 .searchIcon {
-    height: 30px;
-    width : 30px;
+    height: 35px;
+    width : 35px;
     margin-bottom: 20px;
-    margin-right: 100px;
+    background-color: #E6B84C;
 }
 
 .searchField>form {
     background-color: rgba(0, 0, 0, 0);
     width: 40vw;
     font-size: 30px;
+
 }
 
 .searchDiv {
@@ -40,8 +47,16 @@
 
 
 #header-search {
+    color: #141414;
     height:7vh;
     width: 78%;
+    border-radius:20px;
+    -moz-border-radius:20px;
+    -webkit-border-radius:20px;
+    padding-left: 1vw;
+    border: 0 solid;
+    box-shadow: -1px 1px 4px 0px #000000;
+    background-color: snow;
 }
 
 
@@ -60,6 +75,6 @@
     }
 
     .searchField>form>input {
-        font-size: 30px;
+        font-size: 3vh;
     }
 }
