@@ -18,7 +18,7 @@ function ArtistPage() {
                 name : data.name,
                 description : data.description,
                 img : data.thumbnails[0].url,
-                songs : data.products.songs,
+                videoId : data.products.songs.videoId,
                 }
             ))
 
@@ -31,10 +31,17 @@ function ArtistPage() {
         <div>
             <div className="artistPageHead">
                 <img className="artistPageImg" src={artist.img} alt="image"/>
+                <img className="artistPageBackground" src={artist.img} alt="image"/>
+
                 <div className="artistPageName"> {artist.name} </div>
             </div>
                 <div className="artistPageDesc"> {artist.description} </div>
+
         </div>
+
+
+
+
 
     );
 }

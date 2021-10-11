@@ -4,9 +4,16 @@ main {
 
 .artistPageHead {
     display: flex;
-    padding-top: 3vh;
     padding-left: 3vh;
+}
 
+.artistPageBackground {
+    width: 110%;
+    opacity: 0.1;
+    position: absolute;
+    left: -3vh;
+    padding-top: -3vh;
+    z-index: 0;
 }
 
 
@@ -15,6 +22,8 @@ main {
     height: 65%;
     width: 35%;
     opacity: 1;
+    margin-top: 3vh;
+    z-index: 2;
 }
 
 .artistPageName {
