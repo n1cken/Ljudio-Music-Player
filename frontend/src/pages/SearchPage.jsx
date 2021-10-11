@@ -44,12 +44,12 @@ function SearchPage() {
     return (
         <div>
 
-            <div className="songHeader">Artists</div>
+            <div className="artistHeader">Artists</div>
             {artists && artists.map(artist => (
                 <div>
                     <div className="result" onClick={() => artistClick(artist)}>
                         <img src={artist.thumbnails[0].url} alt="" />
-                        <div className="resultArtist"> {artist.name} </div>
+                        <div className="resultArtist2"> {artist.name} </div>
                     </div>
                 </div>
             ))}

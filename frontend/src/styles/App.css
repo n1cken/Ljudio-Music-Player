@@ -39,7 +39,15 @@ main:after {
   outline: inherit;
 }
 
+.artistHeader {
+  margin: 1vh;
+  font-size: 5vh;
+  padding-top: 6vh;
+  padding-bottom: 3vh;
+}
+
 .songHeader {
+  margin: 1vh;
   font-size: 5vh;
   padding-top: 6vh;
   padding-bottom: 3vh;
@@ -63,6 +71,13 @@ main:after {
   font-weight: 100;
   font-family: Arial, Helvetica, sans-serif;
   opacity: 0.5;
+}
+
+.resultArtist2 {
+  font-size: 2vh;
+  font-max-size: 30%;
+  margin-top: 3vh;
+  margin-left: 2vh;
 }
 
 .playingPage {
@@ -117,6 +132,15 @@ main:after {
   .resultSong {
     font-size: 2.2vh;
     margin-top: 2vh;
+    margin-left: 2vh;
+    width: 65%;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .resultArtist2 {
+    font-size: 2.2vh;
+    margin-top: 2.5vh;
     margin-left: 2vh;
     width: 65%;
     white-space: nowrap;
