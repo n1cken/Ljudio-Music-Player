@@ -51,6 +51,7 @@ main:after {
 
 .albumimg {
   border: 1px solid white;
+  box-shadow: -4px 4px 4px 0px #000000;
   margin-top: 4vh;
   width: 26vh;
   height: 26vh;
