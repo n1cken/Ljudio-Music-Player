@@ -5,7 +5,11 @@ import pause from "../assets/svgFiles/pause-solid.svg";
 import forward from "../assets/svgFiles/forward-solid.svg";
 import PlayerInformation from "./PlayerInformation";
 
+
 import '../styles/Player.css';
+
+
+
 
 class Player extends React.Component {
     constructor(props) {
@@ -14,6 +18,7 @@ class Player extends React.Component {
             isPlaying: localStorage.getItem('playPause'),
         }
     }
+
 
     playOrPause() {
         if (!this.state.isPlaying) {
@@ -32,9 +37,9 @@ class Player extends React.Component {
             <div>
                 <footer className="bottom">
                     <div></div>
-                    <img src={Backward} alt="backwards" className="controlButton"/>
-                    <img src={pause}  className="controlButton" alt="play" id="playPause" onClick={() => { this.playOrPause() }} />
-                    <img src={forward} alt="forward" className="controlButton"/>
+                    <img src={Backward} alt="backwards" className="controlButton" />
+                    <img src={pause} className="controlButton" alt="play" id="playPause" onClick={() => { this.playOrPause() }} />
+                    <img src={forward} alt="forward" className="controlButton" />
                     <div></div>
                 </footer>
             </div>
