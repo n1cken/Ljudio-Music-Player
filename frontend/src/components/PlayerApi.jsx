@@ -1,14 +1,15 @@
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { useParams } from 'react-router-dom'
-
+import { PlayerContext } from '../contexts/PlayerContext'
 
 
 
 function PlayerApi() {
 
+  const [context, setContext] = useContext(PlayerContext)
   const url = 'https://yt-music-api.herokuapp.com/api/yt/song/'
-  const { videoId } = useParams()
+  const videoId = context
   const [player, setPlayer] = useState()
 
   useEffect(() => {
@@ -28,6 +29,7 @@ function PlayerApi() {
   }
 
   function playSong() {
+    console.log(context)
     player.loadVideoById(videoId);
   }
   function pauseSong() {

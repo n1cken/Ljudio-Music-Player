@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { useHistory, useParams } from 'react-router-dom'
+import { PlayerContext } from '../contexts/PlayerContext'
 
 function SearchPage() {
+    const [context, setContext] = useContext(PlayerContext)
     const url = 'https://yt-music-api.herokuapp.com/api/yt/songs/'
     const [artist, setArtist] = useState(null)
     const [songs, setSongs] = useState()
@@ -22,6 +24,8 @@ function SearchPage() {
         console.log(song.name)
         const videoId = song.videoId
         history.push('/playingpage/' + videoId)
+        setContext(videoId)
+        console.log(context)
     }
 
     return (
