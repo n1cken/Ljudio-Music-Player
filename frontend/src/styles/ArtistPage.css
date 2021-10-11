@@ -39,3 +39,16 @@ main {
     padding-top: 3vh;
     padding-left: 3vh;
 }
+
+.artistPageSongHeader {
+    font-size: 5vh;
+    padding-left: 3vh;
+    padding-top: 6vh;
+    padding-bottom: 3vh;
+}
+
+.artistPageAlbumHeader {
+    font-size: 5vh;
+    padding-left: 3vh;
+    padding-bottom: 3vh;
+}

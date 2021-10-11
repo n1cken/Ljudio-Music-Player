@@ -37,6 +37,10 @@ function ArtistPage() {
             </div>
                 <div className="artistPageDesc"> {artist.description} </div>
 
+            <div className="artistPageSongHeader"> Songs </div>
+
+            <div  className="artistPageAlbumHeader"> Albums </div>
+
         </div>
 
 
