@@ -7,7 +7,7 @@ function SearchPage() {
     const url = 'https://yt-music-api.herokuapp.com/api/yt/songs/'
     const urlArtist = 'https://yt-music-api.herokuapp.com/api/yt/artists/'
 
-    const [artists, setArtists] = useState(null)
+    const [artists, setArtists] = useState()
     const [songs, setSongs] = useState()
 
     const { search } = useParams()
@@ -34,13 +34,20 @@ function SearchPage() {
         console.log(context)
     }
 
+    function artistClick(artist) {
+        console.log(artist.name)
+        const browseId = artist.browseId
+        history.push('/artistpage/' + browseId)
+        console.log(artist)
+    }
+
     return (
         <div>
 
             <div className="songHeader">Artists</div>
             {artists && artists.map(artist => (
                 <div>
-                    <div className="result" onClick={() => songClick(artist)}>
+                    <div className="result" onClick={() => artistClick(artist)}>
                         <img src={artist.thumbnails[0].url} alt="" />
                         <div className="resultArtist"> {artist.name} </div>
                     </div>
