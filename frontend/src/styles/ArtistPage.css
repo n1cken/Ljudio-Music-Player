@@ -1,0 +1,32 @@
+main {
+    padding-bottom: 55vh;
+}
+
+.artistPageHead {
+    display: flex;
+    padding-top: 3vh;
+    padding-left: 3vh;
+
+}
+
+
+.artistPageImg {
+    box-shadow: -4px 4px 4px 0px #000000;
+    height: 65%;
+    width: 35%;
+    opacity: 1;
+}
+
+.artistPageName {
+    margin-top: auto;
+    float: bottom;
+    font-size: 7vh;
+    width: 70%;
+    padding-left: 3vh;
+}
+
+.artistPageDesc {
+    width: 80%;
+    padding-top: 3vh;
+    padding-left: 3vh;
+}
