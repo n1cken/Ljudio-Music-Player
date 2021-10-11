@@ -48,10 +48,13 @@ main:after {
 .result {
   display: flex;
   flex-flow: row wrap;
-  padding: 1vh;
+  cursor: pointer;
+  margin: 1vh;
 }
 
 .resultSong {
+  font-size: 2vh;
+  font-max-size: 30%;
   margin-top: 2vh;
   margin-left: 2vh;
 }
@@ -108,5 +111,15 @@ main:after {
   /* For mobile phones: */
   .top {
     height: 20px;
+  }
+
+
+  .resultSong {
+    font-size: 2.2vh;
+    margin-top: 2vh;
+    margin-left: 2vh;
+    width: 65%;
+    white-space: nowrap;
+    overflow: hidden;
   }
 }
