@@ -3,7 +3,9 @@ import { useHistory, useParams } from 'react-router-dom'
 
 function SearchPage() {
     const url = 'https://yt-music-api.herokuapp.com/api/yt/songs/'
-    const [artist, setArtist] = useState(null)
+    const urlArtist = 'https://yt-music-api.herokuapp.com/api/yt/artists/'
+
+    const [artists, setArtists] = useState(null)
     const [songs, setSongs] = useState()
 
     const { search } = useParams()
@@ -16,7 +18,11 @@ function SearchPage() {
             .then(res => res.json())
             .then(data => setSongs(data.content))
 
-    })
+        fetch(urlArtist + search)
+            .then(res => res.json())
+            .then(data => setArtists(data.content))
+
+    }, [songs])
 
     function songClick(song) {
         console.log(song.name)
@@ -26,8 +32,18 @@ function SearchPage() {
 
     return (
         <div>
-            <div className="songHeader">Songs</div>
 
+            <div className="songHeader">Artists</div>
+            {artists && artists.map(artist => (
+                <div>
+                    <div className="result" onClick={() => songClick(artist)}>
+                        <img src={artist.thumbnails[0].url} alt="" />
+                        <div className="resultArtist"> {artist.name} </div>
+                    </div>
+                </div>
+            ))}
+
+            <div className="songHeader">Songs</div>
             {songs && songs.map(song => (
                 <div>
                     <div className="result" onClick={() => songClick(song)}>
@@ -38,6 +54,7 @@ function SearchPage() {
                     </div>
                 </div>
             ))}
+
         </div>
     )
 }
