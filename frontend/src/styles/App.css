@@ -45,6 +45,16 @@ main:after {
   padding-bottom: 3vh;
 }
 
+.result {
+  display: flex;
+  padding: 1vh;
+}
+
+.resultSong {
+  margin-top: 2vh;
+  margin-left: 2vh;
+}
+
 .playingPage {
   text-align: center;
 }

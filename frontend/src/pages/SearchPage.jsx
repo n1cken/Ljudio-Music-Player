@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import {useHistory, useParams} from 'react-router-dom'
+import { useHistory, useParams } from 'react-router-dom'
 
 function SearchPage() {
     const url = 'https://yt-music-api.herokuapp.com/api/yt/songs/'
@@ -28,7 +28,12 @@ function SearchPage() {
         <div>
             <div className="songHeader">Songs</div>
             {songs && songs.map(song => (
-                <div onClick={() => songClick(song)}>{song.name}</div>
+                <div>
+                    <div className="result" onClick={() => songClick(song)}>
+                        <img src={song.thumbnails[0].url} alt="" />
+                        <div className="resultSong"> {song.name} </div>
+                    </div>
+                </div>
             ))}
         </div>
     )
