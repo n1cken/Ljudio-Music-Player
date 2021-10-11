@@ -47,12 +47,19 @@ main:after {
 
 .result {
   display: flex;
+  flex-flow: row wrap;
   padding: 1vh;
 }
 
 .resultSong {
   margin-top: 2vh;
   margin-left: 2vh;
+}
+
+.resultArtist {
+  font-weight: 100;
+  font-family: Arial, Helvetica, sans-serif;
+  opacity: 0.5;
 }
 
 .playingPage {

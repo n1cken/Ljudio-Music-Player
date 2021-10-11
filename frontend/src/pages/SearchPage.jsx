@@ -31,7 +31,9 @@ function SearchPage() {
                 <div>
                     <div className="result" onClick={() => songClick(song)}>
                         <img src={song.thumbnails[0].url} alt="" />
-                        <div className="resultSong"> {song.name} </div>
+                        <div className="resultSong"> {song.name}
+                            <div className="resultArtist"> {song.artist.name} </div>
+                        </div>
                     </div>
                 </div>
             ))}
