@@ -13,7 +13,7 @@ import SearchField from "./SearchField";
 
 import Home from "../assets/svgFiles/home.svg";
 import Search from "../assets/svgFiles/search.svg";
-import Close from "../assets/svgFiles/window-close-regular.svg"
+import Close from "../assets/svgFiles/close3.svg"
 
 import '../styles/TopBar.css';
 
