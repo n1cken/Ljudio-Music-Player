@@ -40,6 +40,10 @@ main {
     padding-left: 3vh;
 }
 
+.artistPageResultImage {
+    margin-left: 2.5vh;
+}
+
 .artistPageSongHeader {
     font-size: 5vh;
     padding-left: 3vh;
@@ -50,5 +54,6 @@ main {
 .artistPageAlbumHeader {
     font-size: 5vh;
     padding-left: 3vh;
+    padding-top: 6vh;
     padding-bottom: 3vh;
 }

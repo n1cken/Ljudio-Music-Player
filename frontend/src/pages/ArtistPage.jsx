@@ -24,8 +24,8 @@ function ArtistPage() {
                 artistSongs: data.products.songs.content,
                 artistAlbums : data.products.albums.content
             }))
-            .then(data => setSongs(artist.artistSongs))
-            .then(data => setAlbums(artist.artistAlbums))
+            .then(data => setSongs(artist.artistSongs), [])
+            .then(data => setAlbums(artist.artistAlbums), [])
     })
 
     return (
@@ -51,7 +51,7 @@ function ArtistPage() {
             <div className="artistPageAlbumHeader"> Albums </div>
             {albums && albums.map(album => (
                 <div className="result" onClick={() => songClick(album)}>
-                    { <img src={album.thumbnails[0].url} height="65px" width="65px" alt="" /> }
+                    { <img className="artistPageResultImage" src={album.thumbnails[0].url} height="65px" width="65px" alt="" /> }
                     <div className="resultSong"> {album.name}</div>
                 </div>                ))}
 
