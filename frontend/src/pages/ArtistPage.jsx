@@ -10,6 +10,7 @@ function ArtistPage() {
 
     const [artist, setArtist] = useState([])
     const [songs, setSongs] = useState([])
+    const [albums, setAlbums] = useState([])
 
 
     useEffect(() => {
@@ -20,9 +21,11 @@ function ArtistPage() {
                 description: data.description,
                 img: data.thumbnails[0].url,
                 videoId: data.products.songs.videoId,
-                artistSongs: data.products.songs.content
+                artistSongs: data.products.songs.content,
+                artistAlbums : data.products.albums.content
             }))
             .then(data => setSongs(artist.artistSongs))
+            .then(data => setAlbums(artist.artistAlbums))
     })
 
     return (
@@ -40,15 +43,19 @@ function ArtistPage() {
             {songs && songs.map(song => (
                 <div>
                     <div className="result" onClick={() => songClick(song)}>
-                        {/* <img src={song.thumbnails[0].url} alt="" /> */}
                         <div className="resultSong"> {song.name}</div>
                     </div>
                 </div>
             ))}
 
             <div className="artistPageAlbumHeader"> Albums </div>
+            {albums && albums.map(album => (
+                <div className="result" onClick={() => songClick(album)}>
+                    { <img src={album.thumbnails[0].url} height="65px" width="65px" alt="" /> }
+                    <div className="resultSong"> {album.name}</div>
+                </div>                ))}
 
-        </div>
+                </div>
 
 
 
