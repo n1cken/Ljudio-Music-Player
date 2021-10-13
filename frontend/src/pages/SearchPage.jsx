@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { useHistory, useParams } from 'react-router-dom'
 import { PlayerContext } from '../contexts/PlayerContext'
-import PlayerApi from '../components/PlayerApi'
 
 function SearchPage() {
     const [context, updateContext] = useContext(PlayerContext)
@@ -73,7 +72,6 @@ function SearchPage() {
                     </div>
                 </div>
             ))}
-            <PlayerApi />
         </div>
     )
 }

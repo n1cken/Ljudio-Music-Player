@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import PlayerApi from '../components/PlayerApi'
 
 function PlayingPage() {
 
@@ -33,7 +32,6 @@ function PlayingPage() {
             <div className="playingPageSong">{song.name}</div>
             <div className="playingPageArtist">{song.artist}</div>
             <h3 className="playingPageAlbum">{song.album}</h3>
-            <PlayerApi />
         </div>
     )
 }

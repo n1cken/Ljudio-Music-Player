@@ -11,6 +11,7 @@ import HomePage from "./pages/HomePage";
 import ArtistPage from "./pages/ArtistPage";
 import React from "react";
 import PlayerInformation from "./components/PlayerInformation";
+import PlayerApi from "./components/PlayerApi";
 
 function App() {
     return (
@@ -25,7 +26,7 @@ function App() {
                 <Route path="/" exact component={HomePage} />
                 <Route path="/playingPage/:videoId" component={PlayingPage} />
             </main>
-
+            <PlayerApi />
         </Router>
     );
 }
