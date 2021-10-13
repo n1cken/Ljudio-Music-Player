@@ -11,7 +11,6 @@ function PlayingPage() {
     const { videoId } = useParams()
 
     useEffect(() => {
-        context.player.loadVideoById(context.videoId);
         fetch(url + videoId)
             .then(res => res.json())
             .then(data => setSong({
