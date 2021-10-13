@@ -26,8 +26,6 @@ function App() {
                 <Route path="/playingPage/:videoId" component={PlayingPage} />
             </main>
 
-            <PlayerInformation />
-            <Player />
         </Router>
     );
 }

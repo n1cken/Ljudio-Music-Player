@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { useHistory, useParams } from 'react-router-dom'
 import { PlayerContext } from '../contexts/PlayerContext'
+import PlayerApi from '../components/PlayerApi'
 
 function SearchPage() {
     const [context, updateContext] = useContext(PlayerContext)
@@ -31,9 +32,13 @@ function SearchPage() {
         const videoId = song.videoId
         history.push('/playingpage/' + videoId)
         updateContext({
-            videoId: videoId
+            videoId: videoId,
+            song: song.name,
+            artist: song.artist.name
         })
-        console.log(context)
+        console.log(song.name)
+        console.log(song.artist.name)
+
     }
 
     function artistClick(artist) {
@@ -57,6 +62,7 @@ function SearchPage() {
             ))}
 
             <div className="songHeader">Songs</div>
+
             {songs && songs.map(song => (
                 <div>
                     <div className="result" onClick={() => songClick(song)}>
@@ -67,7 +73,7 @@ function SearchPage() {
                     </div>
                 </div>
             ))}
-
+            <PlayerApi />
         </div>
     )
 }

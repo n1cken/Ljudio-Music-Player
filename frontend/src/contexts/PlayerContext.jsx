@@ -6,7 +6,9 @@ export const PlayerContext = createContext()
 function PlayerContextProvider(props) {
   const [context, setContext] = useState({
     videoId: null,
-    player: null
+    player: null,
+    song: null,
+    artist: null
   })
 
   function updateContext(values) {
