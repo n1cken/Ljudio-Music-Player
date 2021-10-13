@@ -16,8 +16,7 @@ function PlayerApi() {
   const videoId = context
   const [player, setPlayer] = useState()
   const [progress, setProgress] = useState(0)
-
-
+  const [loaded, setSiteLoaded] = useState(false)
 
   useEffect(() => {
     loadPlayer()
@@ -34,13 +33,13 @@ function PlayerApi() {
       let duration = context.player.getDuration()
       let playedPercent = (currentTime / duration) * 100
 
-
       setProgress(playedPercent)
-
     }, 100);
   }, [context.player])
 
-
+  useEffect( () => {
+    setTimeout(() => {playSong()}, 100);
+  }, [context])
 
   function changeSongPosition(e) {
     setProgress(e.target.value)
@@ -67,12 +66,12 @@ function PlayerApi() {
   function playSong() {
     console.log(context)
     player.loadVideoById(context.videoId);
-
   }
   function pauseSong() {
     player.pauseVideo();
   }
   function resumeSong() {
+    window.onload = playSong
     player.playVideo();
 
   }
@@ -82,9 +81,8 @@ function PlayerApi() {
   }
 
 
-
-
   return (
+
     <div className="information">
       <div className="artistText"> {context.song}</div>
       <div className="artistText">{context.artist} </div>
@@ -105,6 +103,7 @@ function PlayerApi() {
       </div>
     </div>
   )
+
 }
 
 export default PlayerApi
