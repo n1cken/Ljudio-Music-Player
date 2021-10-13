@@ -98,9 +98,9 @@ function PlayerApi() {
       />
       <div className="controllers">
         <div></div>
-        <button className="button" onClick={playSong}><img src={play} /></button>
-        <button className="button" onClick={resumeSong}><img src={forward} /></button>
-        <button className="button" onClick={pauseSong}><img src={pause} /></button>
+        <div className="button" onClick={playSong}><img src={play} /></div>
+        <div className="button" onClick={resumeSong}><img src={forward} /></div>
+        <div className="button" onClick={pauseSong}><img src={pause} /></div>
         <div></div>
       </div>
     </div>
