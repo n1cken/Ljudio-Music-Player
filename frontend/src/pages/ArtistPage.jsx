@@ -28,9 +28,9 @@ function ArtistPage() {
                 artistSongs: data.products.songs.content,
                 artistAlbums : data.products.albums.content
             }))
-            .then(data => setSongs(artist.artistSongs), [])
-            .then(data => setAlbums(artist.artistAlbums), [])
-    })
+            .then(data => setSongs(artist.artistSongs))
+            .then(data => setAlbums(artist.artistAlbums))
+    }, [songs])
 
     function songClick(song) {
         console.log(song.name)
