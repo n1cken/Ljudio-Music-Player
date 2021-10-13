@@ -1,12 +1,16 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from "react-router-dom";
+import React, {useContext, useEffect, useState} from 'react';
+import {useHistory, useParams} from "react-router-dom";
 import '../styles/ArtistPage.css'
+import {PlayerContext} from "../contexts/PlayerContext";
 
 function ArtistPage() {
 
+    const [context, updateContext, setContext] = useContext(PlayerContext)
     const urlArtist = 'https://yt-music-api.herokuapp.com/api/yt/artist/'
 
     const { artistId } = useParams()
+    const history = useHistory()
+
 
     const [artist, setArtist] = useState([])
     const [songs, setSongs] = useState([])
@@ -28,6 +32,20 @@ function ArtistPage() {
             .then(data => setAlbums(artist.artistAlbums), [])
     })
 
+    function songClick(song) {
+        console.log(song.name)
+        const videoId = song.videoId
+        history.push('/playingpage/' + videoId)
+        updateContext({
+            videoId: videoId,
+            song: song.name,
+            artist: song.artist.name
+        })
+        console.log(song.name)
+        console.log(song.artist.name)
+
+    }
+
     return (
 
         <div>
@@ -40,6 +58,7 @@ function ArtistPage() {
             <div className="artistPageDesc"> {artist.description} </div>
 
             <div className="artistPageSongHeader"> Songs </div>
+
             {songs && songs.map(song => (
                 <div>
                     <div className="result" onClick={() => songClick(song)}>
