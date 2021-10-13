@@ -3,7 +3,7 @@ import { useHistory, useParams } from 'react-router-dom'
 import { PlayerContext } from '../contexts/PlayerContext'
 
 function SearchPage() {
-    const [context, setContext] = useContext(PlayerContext)
+    const [context, updateContext] = useContext(PlayerContext)
     const url = 'https://yt-music-api.herokuapp.com/api/yt/songs/'
     const urlArtist = 'https://yt-music-api.herokuapp.com/api/yt/artists/'
 
@@ -30,7 +30,9 @@ function SearchPage() {
         console.log(song.name)
         const videoId = song.videoId
         history.push('/playingpage/' + videoId)
-        setContext(videoId)
+        updateContext({
+            videoId: videoId
+        })
         console.log(context)
     }
 

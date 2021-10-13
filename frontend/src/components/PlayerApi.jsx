@@ -7,7 +7,7 @@ import { PlayerContext } from '../contexts/PlayerContext'
 
 function PlayerApi() {
 
-  const [context, setContext] = useContext(PlayerContext)
+  const [context, updateContext] = useContext(PlayerContext)
   const url = 'https://yt-music-api.herokuapp.com/api/yt/song/'
   const videoId = context
   const [player, setPlayer] = useState()
@@ -26,11 +26,15 @@ function PlayerApi() {
       }
     });
     setPlayer(ytPlayer)
+    updateContext({
+      player: ytPlayer
+    })
+
   }
 
   function playSong() {
     console.log(context)
-    player.loadVideoById(videoId);
+    player.loadVideoById(context.videoId);
   }
   function pauseSong() {
     player.pauseVideo();

@@ -6,18 +6,20 @@ export const PlayerContext = createContext()
 function PlayerContextProvider(props) {
   const [context, setContext] = useState({
     videoId: null,
+    player: null
   })
 
   function updateContext(values) {
-    setContext(
+    setContext({
       ...context,
-      ...values)
+      ...values
+    })
   }
 
 
 
   return (
-    <PlayerContext.Provider value={[context, setContext]}>
+    <PlayerContext.Provider value={[context, updateContext]}>
       {props.children}
     </PlayerContext.Provider>
   )
