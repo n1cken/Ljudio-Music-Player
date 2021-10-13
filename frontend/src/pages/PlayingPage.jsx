@@ -1,13 +1,17 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { useParams } from 'react-router-dom'
+import { PlayerContext } from '../contexts/PlayerContext'
+
 
 function PlayingPage() {
 
+    const [context, updateContext] = useContext(PlayerContext)
     const url = 'https://yt-music-api.herokuapp.com/api/yt/song/'
     const [song, setSong] = useState([])
     const { videoId } = useParams()
 
     useEffect(() => {
+        context.player.loadVideoById(context.videoId);
         fetch(url + videoId)
             .then(res => res.json())
             .then(data => setSong({
