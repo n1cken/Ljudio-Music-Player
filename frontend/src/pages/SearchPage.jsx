@@ -35,7 +35,6 @@ function SearchPage() {
             song: song.name,
             artist: song.artist.name
         })
-        context.player.loadVideoById(context.videoId);
         console.log(song.name)
         console.log(song.artist.name)
 
