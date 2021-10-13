@@ -21,7 +21,7 @@ function PlayerContextProvider(props) {
 
 
   return (
-    <PlayerContext.Provider value={[context, updateContext]}>
+    <PlayerContext.Provider value={[context, updateContext, setContext]}>
       {props.children}
     </PlayerContext.Provider>
   )
