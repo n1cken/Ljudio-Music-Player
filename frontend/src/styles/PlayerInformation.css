@@ -37,6 +37,7 @@
 .controlButton:active{
   filter: blur(5px);
   transform: translateY(4px);
+  transition-duration: 100ms;
 }
 
 .artistText {
