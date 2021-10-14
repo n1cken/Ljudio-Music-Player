@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { useHistory, useParams } from 'react-router-dom'
 import { PlayerContext } from '../contexts/PlayerContext'
-import { saveSearchHistory } from '../services/DatabaseHandler.jsx'
+import { DatabaseHandler } from '../services/DatabaseHandler'
 
 function SearchPage() {
+    const [saveSearchHistory] = useContext(DatabaseHandler)
     const [context, updateContext, setContext] = useContext(PlayerContext)
     const url = 'https://yt-music-api.herokuapp.com/api/yt/songs/'
     const urlArtist = 'https://yt-music-api.herokuapp.com/api/yt/artists/'
@@ -36,6 +37,7 @@ function SearchPage() {
             song: song.name,
             artist: song.artist.name
         })
+        saveSearchHistory()
         console.log(song.name)
         console.log(song.artist.name)
 
