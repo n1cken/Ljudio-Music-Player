@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect, useContext } from 'react'
-import {useHistory, useParams} from 'react-router-dom'
+import { useHistory, useParams } from 'react-router-dom'
 import { PlayerContext } from '../contexts/PlayerContext'
 import '../styles/PlayerInformation.css'
 import previous from "../assets/svgFiles/backward-solid.svg";
@@ -40,6 +40,7 @@ function PlayerApi() {
   }, [])
 
   useEffect(() => {
+    setProgress(0)
     setInterval(() => {
       if (!context.player) return
 
@@ -94,9 +95,9 @@ function PlayerApi() {
 
   }
 
-function fetchPlaylist () {
+  function fetchPlaylist() {
 
-  fetch(urlArtist + context.artistId)
+    fetch(urlArtist + context.artistId)
       .then(res => res.json())
       .then(data => setPlaylistArtist({
         artistSongs: data.products.songs.content
@@ -104,14 +105,14 @@ function fetchPlaylist () {
       .then(data => setPlaylistSongs(playlistArtist.artistSongs))
 
 
-  if (playlist.length <= 5) {
-    playlistSongs.map(song => (
+    if (playlist.length <= 5) {
+      playlistSongs.map(song => (
         playlist.push(song)
-    ))
-  }
+      ))
+    }
 
-  return
-}
+    return
+  }
 
   function nextSong() {
 
@@ -119,18 +120,18 @@ function fetchPlaylist () {
 
     console.log(playlist)
 
-    setPlaylistIndex(playlistIndex+1)
+    setPlaylistIndex(playlistIndex + 1)
 
     let nextSongId = playlist[playlistIndex].videoId
 
     console.log("nextsongId " + nextSongId)
     console.log("playlistindex " + playlistIndex)
 
-    updateContext ( {
+    updateContext({
       videoId: nextSongId,
     })
 
-    history.push('/playingpage/' + nextSongId)
+    context.player.loadVideoById(videoId)
 
   }
 
@@ -183,6 +184,7 @@ function fetchPlaylist () {
         style={{ width: '90%' }}
         id="myRange"
       />
+
       <div className="controllers">
         <div></div>
         <div className="controlButton"><img src={previous} id="previousButton" onClick={previousSong} /></div>

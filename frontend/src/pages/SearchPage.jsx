@@ -34,7 +34,7 @@ function SearchPage() {
             videoId: videoId,
             song: song.name,
             artist: song.artist.name,
-            album: song.album,
+            album: song.album.name,
             thumbnail: song.thumbnails[0].url
         })
         console.log(song.name)
@@ -50,7 +50,7 @@ function SearchPage() {
         console.log(artist)
 
         updateContext({
-            artistId : browseId
+            artistId: browseId
         })
 
     }

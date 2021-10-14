@@ -31,10 +31,10 @@ function PlayingPage() {
     return (
         <div className="playingPage">
 
-            <div> <img className="albumimg" src={song.img} width="200px" height="200px" alt="img" /> </div>
-            <div className="playingPageSong">{song.name}</div>
-            <div className="playingPageArtist">{song.artist}</div>
-            <h3 className="playingPageAlbum">{song.album}</h3>
+            <div> <img className="albumimg" src={context.thumbnail} width="200px" height="200px" alt="img" /> </div>
+            <div className="playingPageSong">{context.song}</div>
+            <div className="playingPageArtist">{context.artist}</div>
+            <h3 className="playingPageAlbum">{context.album}</h3>
         </div>
     )
 }
