@@ -3,10 +3,10 @@ import React, { useState, useEffect, useContext } from 'react'
 import { useParams } from 'react-router-dom'
 import { PlayerContext } from '../contexts/PlayerContext'
 import '../styles/PlayerInformation.css'
-import Backward from "../assets/svgFiles/backward-solid.svg";
+import previous from "../assets/svgFiles/backward-solid.svg";
 import play from "../assets/svgFiles/play-solid.svg";
 import pause from "../assets/svgFiles/pause-solid.svg";
-import forward from "../assets/svgFiles/forward-solid.svg";
+import next from "../assets/svgFiles/forward-solid.svg";
 import share from "../assets/svgFiles/share-svgrepo-com.svg";
 import SearchField from "./SearchField";
 
@@ -78,6 +78,14 @@ function PlayerApi() {
     player.playVideo();
   }
 
+  function previousSong() {
+
+  }
+
+  function nextSong() {
+
+  }
+
   function playPause() {
     let playPauseImage = document.getElementById("playPauseButton");
     if (playPauseImage.getAttribute('src') == play) {
@@ -129,7 +137,10 @@ function PlayerApi() {
       />
       <div className="controllers">
         <div></div>
+        <div className="controlButton"><img src={previous} id="previousButton" onClick={previousSong} /></div>
         <div className="controlButton"><img src={play} id="playPauseButton" onClick={playPause} /></div>
+        <div className="controlButton"><img src={next} id="nextButton" onClick={nextSong} /></div>
+
         <div className="controlButton" onClick={shareSong}><img src={share} /></div>
         <div></div>
       </div>
