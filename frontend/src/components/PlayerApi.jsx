@@ -39,8 +39,8 @@ function PlayerApi() {
     }, 100);
   }, [context.player])
 
-  useEffect( () => {
-    setTimeout(() => {playSong()}, 100);
+  useEffect(() => {
+    setTimeout(() => { playSong() }, 100);
   }, [context])
 
   function changeSongPosition(e) {
@@ -68,6 +68,7 @@ function PlayerApi() {
   function playSong() {
     console.log(context)
     player.loadVideoById(context.videoId);
+    document.getElementById("playPauseButton").src = pause;
   }
   function pauseSong() {
     player.pauseVideo();
@@ -75,6 +76,17 @@ function PlayerApi() {
   function resumeSong() {
     window.onload = playSong
     player.playVideo();
+  }
+
+  function playPause() {
+    let playPauseImage = document.getElementById("playPauseButton");
+    if (playPauseImage.getAttribute('src') == play) {
+      resumeSong();
+      playPauseImage.src = pause;
+    } else {
+      pauseSong();
+      playPauseImage.src = play;
+    }
   }
 
   function shareSong() {
@@ -117,9 +129,7 @@ function PlayerApi() {
       />
       <div className="controllers">
         <div></div>
-        <div className="controlButton" onClick={playSong}><img src={play} /></div>
-        <div className="controlButton" onClick={resumeSong}><img src={forward} /></div>
-        <div className="controlButton" onClick={pauseSong}><img src={pause} /></div>
+        <div className="controlButton"><img src={play} id="playPauseButton" onClick={playPause} /></div>
         <div className="controlButton" onClick={shareSong}><img src={share} /></div>
         <div></div>
       </div>
