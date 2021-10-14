@@ -59,3 +59,13 @@ main {
     padding-top: 6vh;
     padding-bottom: 3vh;
 }
+
+.shareButton {
+    background-color: #E6B84C;
+    padding: 1vw;
+    border-radius: 5%;
+    margin-left: 1.5vw;
+    margin-top: 1vw;
+    width: 2vw;
+    height: 2vw;
+}
