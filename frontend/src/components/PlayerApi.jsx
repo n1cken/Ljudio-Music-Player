@@ -61,7 +61,7 @@ function PlayerApi() {
     setVolume(e.target.value)
     console.log(volume)
 
-    player.setVolume(volume)
+    player.setVolume(volume-2)
   }
 
   function changeSongPosition(e) {
