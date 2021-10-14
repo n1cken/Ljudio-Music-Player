@@ -8,7 +8,9 @@ function PlayerContextProvider(props) {
     videoId: null,
     player: null,
     song: null,
-    artist: null
+    artist: null,
+    album: null,
+    thumbnail: null
   })
 
   function updateContext(values) {

@@ -33,10 +33,13 @@ function SearchPage() {
         updateContext({
             videoId: videoId,
             song: song.name,
-            artist: song.artist.name
+            artist: song.artist.name,
+            album: song.album.name,
+            thumbnail: song.thumbnails[0].url
         })
         console.log(song.name)
         console.log(song.artist.name)
+        console.log(context)
 
     }
 
