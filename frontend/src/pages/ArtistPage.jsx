@@ -2,6 +2,8 @@ import React, {useContext, useEffect, useState} from 'react';
 import {useHistory, useParams} from "react-router-dom";
 import '../styles/ArtistPage.css'
 import {PlayerContext} from "../contexts/PlayerContext";
+import share from "../assets/svgFiles/share-svgrepo-com.svg";
+
 
 function ArtistPage() {
 
@@ -15,6 +17,8 @@ function ArtistPage() {
     const [artist, setArtist] = useState([])
     const [songs, setSongs] = useState([])
     const [albums, setAlbums] = useState([])
+    const [copyUrl, setCopyUrl] = useState(false)
+
 
 
     useEffect(() => {
@@ -46,7 +50,22 @@ function ArtistPage() {
 
     }
 
-    return (
+    function shareSong() {
+
+        try {
+            const href = window.location.href;
+            navigator.clipboard.writeText(href);
+            setCopyUrl(true)
+        } catch {
+            console.log('Failed to copy to clipboard')
+        }
+
+        setTimeout(() => {
+            setCopyUrl(false)
+        }, 2000);
+    }
+
+        return (
 
         <div>
             <div className="artistPageHead">
@@ -56,6 +75,11 @@ function ArtistPage() {
                 <div className="artistPageName"> {artist.name} </div>
             </div>
             <div className="artistPageDesc"> {artist.description} </div>
+
+            <div className="shareButton" onClick={shareSong}><img src={share} /></div>
+            {copyUrl ? <div className="copyClipboard"> Coped to clipboard. </div> : null}
+
+
 
             <div className="artistPageSongHeader"> Songs </div>
 

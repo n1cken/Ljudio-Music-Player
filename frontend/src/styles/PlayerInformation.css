@@ -4,20 +4,20 @@
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 6vh;
     background-color: #E6B84C;
     display: grid;
     padding-top: 20px;
-    padding-bottom: 17vh;
+    padding-bottom: 14vh;
     padding-right: 50px;
 
 }
+
 .controllers{
         justify-content: space-between;
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 8vh;
+    height: 2vw;
     background-color: #E6B84C;
     display: flex;
     padding-right: 50px;
@@ -29,8 +29,15 @@
     height: 31.152px;
 }
 
-.button:hover{
+
+.controlButton:hover{
     cursor: pointer;
+}
+
+.controlButton:active{
+  filter: blur(5px);
+  transform: translateY(4px);
+  transition-duration: 100ms;
 }
 
 .artistText {
