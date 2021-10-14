@@ -12,10 +12,12 @@ import ArtistPage from "./pages/ArtistPage";
 import React from "react";
 import PlayerInformation from "./components/PlayerInformation";
 import PlayerApi from "./components/PlayerApi";
+import DatabaseCreator from "./components/DatabaseCreator";
 
 function App() {
     return (
         <Router>
+            <DatabaseCreator/>
             <TopBar />
 
             <main>

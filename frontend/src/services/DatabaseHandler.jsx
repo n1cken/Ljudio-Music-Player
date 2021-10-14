@@ -1,4 +1,5 @@
 import React, { createContext } from 'react'
+// import { sqlite3 } from 'sqlite3';
 
 export const DatabaseHandler = createContext()
 

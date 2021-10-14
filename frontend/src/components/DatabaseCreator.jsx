@@ -1,23 +1,28 @@
+import React from 'react'
 
 
 
-// class DatabaseCreator {
+//  function createDatabase() {
 
+        //Checks first if there already is a DB file existing.
+        //If there is none, one will be created with the correct tables & columns
+        const fs = require('fs');
+        const { useEffect } = require('react');
+        const dir = '../../LJUDIO_HISTORY_DATABASE.db'
+        if ( fs.existsSync(dir) ) {
+          console.log(`DB File already exist, did not create new one`)
+         
+     }
 
-   // createDatabase() {
-    //    if (typeof objectToBeTested != "../../LJUDIO_HISTORY_DATABASE.db")
-    // object exists
-    //    else
-    // object does not exist
+     else {
+      const sqlite3 = require('sqlite3').verbose()
+        let db = new sqlite3.Database('../../LJUDIO_HISTORY_DATABASE.db');
+        db.run('CREATE TABLE searchHistory(id INTEGER PRIMARY KEY AUTOINCREMENT, previousSearches VARCHAR(50))');
+        db.run('CREATE TABLE playbackHistory(id INTEGER PRIMARY KEY AUTOINCREMENT, playedSongs VARCHAR(50))');
+        db.close();
+        console.log(`SQLite DB File Created`) 
+     }
 
+ // }
 
-const sqlite3 = require('sqlite3').verbose()
-let db = new sqlite3.Database('../../LJUDIO_HISTORY_DATABASE.db');
-db.run('CREATE TABLE searchHistory(id INTEGER PRIMARY KEY AUTOINCREMENT, previousSearches VARCHAR(50))');
-db.run('CREATE TABLE playbackHistory(id INTEGER PRIMARY KEY AUTOINCREMENT, playedSongs VARCHAR(50))');
-db.close();
-
-  //  }
-
-
-// }
+export default DatabaseCreator
