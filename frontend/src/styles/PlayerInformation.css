@@ -29,8 +29,14 @@
     height: 31.152px;
 }
 
+
 .controlButton:hover{
     cursor: pointer;
+}
+
+.controlButton:active{
+  filter: blur(5px);
+  transform: translateY(4px);
 }
 
 .artistText {
