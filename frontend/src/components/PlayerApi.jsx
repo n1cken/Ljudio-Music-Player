@@ -20,6 +20,7 @@ function PlayerApi() {
   const videoId = context
   const [player, setPlayer] = useState()
   const [progress, setProgress] = useState(0)
+  const [volume, setVolume] = useState(100)
   const [copyUrl, setCopyUrl] = useState(false)
   const [playlistSongs, setPlaylistSongs] = useState([])
   const [playlistArtist, setPlaylistArtist] = useState([])
@@ -55,6 +56,13 @@ function PlayerApi() {
   useEffect(() => {
     setTimeout(() => { playSong() }, 100);
   }, [context])
+
+  function changeVolume (e) {
+    setVolume(e.target.value)
+    console.log(volume)
+
+    player.setVolume(volume)
+  }
 
   function changeSongPosition(e) {
     setProgress(e.target.value)
@@ -193,6 +201,14 @@ function PlayerApi() {
 
         <div className="controlButton" onClick={shareSong}><img src={share} /></div>
         <div></div>
+
+        <input type="range"
+               value={volume}
+               onChange={changeVolume}
+               className="slider"
+               style={{ width: '13%', marginRight: "5vw"}}
+               id="volumeRange"
+        />
       </div>
     </div>
   )
