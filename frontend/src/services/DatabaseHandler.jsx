@@ -1,8 +1,8 @@
+import React from 'react'
 
 
 
-
-SaveSearchHistory() {
+function saveSearchHistory() {
     const sqlite3 = require('sqlite3').verbose()
     let db = new sqlite3.Database('../../LJUDIO_HISTORY_DATABASE.db');
     let sql1 = 'INSERT INTO searchHistory (previousSearches) VALUES ("Test")';
@@ -15,7 +15,7 @@ SaveSearchHistory() {
 
 }
 
-SavePlayHistory() {
+function savePlayHistory() {
     const sqlite3 = require('sqlite3').verbose()
     let db = new sqlite3.Database('../../LJUDIO_HISTORY_DATABASE.db');
     let sql2 = 'INSERT INTO playbackHistory (playedSongs) VALUES ("Åsne Test")';
@@ -28,3 +28,6 @@ SavePlayHistory() {
 
 }
 
+
+
+export default DatabaseHandler

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { useHistory, useParams } from 'react-router-dom'
 import { PlayerContext } from '../contexts/PlayerContext'
+import { saveSearchHistory } from '../services/DatabaseHandler.jsx'
 
 function SearchPage() {
     const [context, updateContext, setContext] = useContext(PlayerContext)
