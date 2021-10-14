@@ -175,7 +175,7 @@ function PlayerApi() {
       <div className="artistText">{context.artist} </div>
       <div id="yt-player"></div>
 
-      {copyUrl ? <div className="copyClipboard"> Coped to clipboard. </div> : null}
+      {copyUrl ? <div className="copyClipboard"> Copied to clipboard. </div> : null}
 
       <input type="range"
         value={progress}
