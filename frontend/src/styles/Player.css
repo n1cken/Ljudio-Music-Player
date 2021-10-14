@@ -22,3 +22,9 @@
     margin-right: 45%;
     border-radius: 5%;
 }
+
+.volumeController {
+    position: relative;
+    width: 150px;
+    display: flex;
+}

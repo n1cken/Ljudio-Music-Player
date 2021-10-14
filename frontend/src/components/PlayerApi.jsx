@@ -8,6 +8,8 @@ import play from "../assets/svgFiles/play-solid.svg";
 import pause from "../assets/svgFiles/pause-solid.svg";
 import next from "../assets/svgFiles/forward-solid.svg";
 import share from "../assets/svgFiles/share-svgrepo-com.svg";
+import mute from "../assets/svgFiles/mute.svg";
+import unmute from "../assets/svgFiles/unmute.svg";
 import SearchField from "./SearchField";
 
 
@@ -57,11 +59,11 @@ function PlayerApi() {
     setTimeout(() => { playSong() }, 100);
   }, [context])
 
-  function changeVolume (e) {
+  function changeVolume(e) {
     setVolume(e.target.value)
     console.log(volume)
 
-    player.setVolume(volume-2)
+    player.setVolume(volume - 2)
   }
 
   function changeSongPosition(e) {
@@ -154,6 +156,17 @@ function PlayerApi() {
     }
   }
 
+  function muteUnmute() {
+    let muteUnmuteImage = document.getElementById("muteUnmuteButton");
+    if (muteUnmuteImage.getAttribute('src') == unmute) {
+      player.mute()
+      muteUnmuteImage.src = mute;
+    } else {
+      player.unMute()
+      muteUnmuteImage.src = unmute;
+    }
+  }
+
   function shareSong() {
 
     try {
@@ -200,15 +213,18 @@ function PlayerApi() {
         <div className="controlButton"><img src={next} id="nextButton" onClick={nextSong} /></div>
 
         <div className="controlButton" onClick={shareSong}><img src={share} /></div>
-        <div></div>
 
-        <input type="range"
-               value={volume}
-               onChange={changeVolume}
-               className="slider"
-               style={{ width: '13%', marginRight: "5vw"}}
-               id="volumeRange"
-        />
+        <div className="volumeController">
+          <div className="controlButton"><img src={unmute} id="muteUnmuteButton" onClick={muteUnmute} /></div>
+          <input type="range"
+            value={volume}
+            onChange={changeVolume}
+            className="slider"
+            style={{ width: '125px', position: 'relative', margin: '0 auto', top: '1.4vh', left: '0.5vw', display: 'block' }}
+            id="volumeRange"
+          />
+        </div>
+        <div></div>
       </div>
     </div>
   )
