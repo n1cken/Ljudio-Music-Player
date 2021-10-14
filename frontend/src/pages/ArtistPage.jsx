@@ -20,7 +20,6 @@ function ArtistPage() {
     const [copyUrl, setCopyUrl] = useState(false)
 
 
-
     useEffect(() => {
         fetch(urlArtist + artistId)
             .then(res => res.json())

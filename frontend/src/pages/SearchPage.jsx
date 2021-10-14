@@ -34,7 +34,7 @@ function SearchPage() {
             videoId: videoId,
             song: song.name,
             artist: song.artist.name,
-            album: song.album.name,
+            album: song.album,
             thumbnail: song.thumbnails[0].url
         })
         console.log(song.name)
@@ -48,6 +48,11 @@ function SearchPage() {
         const browseId = artist.browseId
         history.push('/artistpage/' + browseId)
         console.log(artist)
+
+        updateContext({
+            artistId : browseId
+        })
+
     }
 
     return (

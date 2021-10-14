@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect, useContext } from 'react'
-import { useParams } from 'react-router-dom'
+import {useHistory, useParams} from 'react-router-dom'
 import { PlayerContext } from '../contexts/PlayerContext'
 import '../styles/PlayerInformation.css'
 import previous from "../assets/svgFiles/backward-solid.svg";
@@ -15,10 +15,22 @@ function PlayerApi() {
 
   const [context, updateContext] = useContext(PlayerContext)
   const url = 'https://yt-music-api.herokuapp.com/api/yt/song/'
+  const urlArtist = 'https://yt-music-api.herokuapp.com/api/yt/artist/'
+
   const videoId = context
   const [player, setPlayer] = useState()
   const [progress, setProgress] = useState(0)
   const [copyUrl, setCopyUrl] = useState(false)
+  const [playlistSongs, setPlaylistSongs] = useState([])
+  const [playlistArtist, setPlaylistArtist] = useState([])
+
+  const [playlist, setPlaylist] = useState([])
+
+  const [playlistIndex, setPlaylistIndex] = useState(0)
+
+
+  const history = useHistory()
+
 
   useEffect(() => {
     loadPlayer()
@@ -82,7 +94,43 @@ function PlayerApi() {
 
   }
 
+function fetchPlaylist () {
+
+  fetch(urlArtist + context.artistId)
+      .then(res => res.json())
+      .then(data => setPlaylistArtist({
+        artistSongs: data.products.songs.content
+      }))
+      .then(data => setPlaylistSongs(playlistArtist.artistSongs))
+
+
+  if (playlist.length <= 5) {
+    playlistSongs.map(song => (
+        playlist.push(song)
+    ))
+  }
+
+  return
+}
+
   function nextSong() {
+
+    fetchPlaylist()
+
+    console.log(playlist)
+
+    setPlaylistIndex(playlistIndex+1)
+
+    let nextSongId = playlist[playlistIndex].videoId
+
+    console.log("nextsongId " + nextSongId)
+    console.log("playlistindex " + playlistIndex)
+
+    updateContext ( {
+      videoId: nextSongId,
+    })
+
+    history.push('/playingpage/' + nextSongId)
 
   }
 
