@@ -14,3 +14,11 @@
     width: 25px;
     background-color: #E6B84C;
 }
+
+.copyClipboard {
+    padding: 1vh;
+    background-color: #181a1b;
+    margin-left: 45%;
+    margin-right: 45%;
+    border-radius: 5%;
+}

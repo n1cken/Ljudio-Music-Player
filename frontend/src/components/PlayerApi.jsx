@@ -7,6 +7,8 @@ import Backward from "../assets/svgFiles/backward-solid.svg";
 import play from "../assets/svgFiles/play-solid.svg";
 import pause from "../assets/svgFiles/pause-solid.svg";
 import forward from "../assets/svgFiles/forward-solid.svg";
+import share from "../assets/svgFiles/share-svgrepo-com.svg";
+import SearchField from "./SearchField";
 
 
 function PlayerApi() {
@@ -16,7 +18,7 @@ function PlayerApi() {
   const videoId = context
   const [player, setPlayer] = useState()
   const [progress, setProgress] = useState(0)
-  const [loaded, setSiteLoaded] = useState(false)
+  const [copyUrl, setCopyUrl] = useState(false)
 
   useEffect(() => {
     loadPlayer()
@@ -73,6 +75,22 @@ function PlayerApi() {
   function resumeSong() {
     window.onload = playSong
     player.playVideo();
+  }
+
+  function shareSong() {
+
+    try {
+      const href = window.location.href;
+      navigator.clipboard.writeText(href);
+      setCopyUrl(true)
+    } catch {
+      console.log('Failed to copy to clipboard')
+    }
+
+    setTimeout(() => {
+      setCopyUrl(false)
+    }, 2000);
+
 
   }
 
@@ -87,6 +105,9 @@ function PlayerApi() {
       <div className="artistText"> {context.song}</div>
       <div className="artistText">{context.artist} </div>
       <div id="yt-player"></div>
+
+      {copyUrl ? <div className="copyClipboard"> Coped to clipboard. </div> : null}
+
       <input type="range"
         value={progress}
         onChange={changeSongPosition}
@@ -99,6 +120,7 @@ function PlayerApi() {
         <div className="controlButton" onClick={playSong}><img src={play} /></div>
         <div className="controlButton" onClick={resumeSong}><img src={forward} /></div>
         <div className="controlButton" onClick={pauseSong}><img src={pause} /></div>
+        <div className="controlButton" onClick={shareSong}><img src={share} /></div>
         <div></div>
       </div>
     </div>
