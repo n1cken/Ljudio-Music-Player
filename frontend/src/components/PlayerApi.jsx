@@ -69,7 +69,7 @@ function PlayerApi() {
   function changeSongPosition(e) {
     setProgress(e.target.value)
 
-    let newPosition = context.player.getDuration() / e.target.value
+    let newPosition = (context.player.getDuration() * (e.target.value / 100))
     context.player.seekTo(newPosition, true)
   }
 
