@@ -91,7 +91,7 @@ function PlayerApi() {
   function playSong() {
     console.log(context)
     player.loadVideoById(context.videoId);
-    setPlaylistIndex(context.queue.length)
+    setPlaylistIndex(context.queue.length - 1)
     document.getElementById("playPauseButton").src = pause;
   }
   function pauseSong() {
@@ -104,6 +104,8 @@ function PlayerApi() {
 
   function previousSong() {
     console.log(playlistIndex)
+    player.loadVideoById(context.queue[(playlistIndex - 1)])
+    setPlaylistIndex((playlistIndex - 1))
   }
 
   function fetchPlaylist() {
@@ -147,8 +149,8 @@ function PlayerApi() {
      
  */
     console.log(playlistIndex)
-
-
+    player.loadVideoById(context.queue[(playlistIndex + 1)])
+    setPlaylistIndex((playlistIndex + 1))
   }
 
   function playPause() {
