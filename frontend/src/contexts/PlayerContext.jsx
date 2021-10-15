@@ -4,14 +4,18 @@ export const PlayerContext = createContext()
 
 
 function PlayerContextProvider(props) {
-  const [context, setContext] = useState({
-    videoId: null,
-    player: null,
-    song: null,
-    artist: null,
-    album: null,
-    thumbnail: null
-  })
+  const [context, setContext] = useState(
+    [{
+      videoId: null,
+      player: null,
+      song: null,
+      artist: null,
+      album: null,
+      thumbnail: null
+    }
+
+    ]
+  )
 
   function updateContext(values) {
     setContext({

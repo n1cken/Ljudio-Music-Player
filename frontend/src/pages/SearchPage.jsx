@@ -37,6 +37,7 @@ function SearchPage() {
             album: song.album.name,
             thumbnail: song.thumbnails[0].url
         })
+
         console.log(song.name)
         console.log(song.artist.name)
         console.log(context)
