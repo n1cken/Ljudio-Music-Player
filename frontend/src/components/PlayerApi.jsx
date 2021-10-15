@@ -91,6 +91,7 @@ function PlayerApi() {
   function playSong() {
     console.log(context)
     player.loadVideoById(context.videoId);
+    setPlaylistIndex(context.queue.length)
     document.getElementById("playPauseButton").src = pause;
   }
   function pauseSong() {
@@ -102,46 +103,51 @@ function PlayerApi() {
   }
 
   function previousSong() {
-
+    console.log(playlistIndex)
   }
 
   function fetchPlaylist() {
+    /*
+        fetch(urlArtist + context.artistId)
+          .then(res => res.json())
+          .then(data => setPlaylistArtist({
+            artistSongs: data.products.songs.content
+          }))
+          .then(data => setPlaylistSongs(playlistArtist.artistSongs))
+    
+    
+        if (playlist.length <= 5) {
+          playlistSongs.map(song => (
+            playlist.push(song)
+          ))
+        }*/
 
-    fetch(urlArtist + context.artistId)
-      .then(res => res.json())
-      .then(data => setPlaylistArtist({
-        artistSongs: data.products.songs.content
-      }))
-      .then(data => setPlaylistSongs(playlistArtist.artistSongs))
-
-
-    if (playlist.length <= 5) {
-      playlistSongs.map(song => (
-        playlist.push(song)
-      ))
-    }
 
     return
   }
 
   function nextSong() {
 
-    fetchPlaylist()
+    /* fetchPlaylist()
+ 
+     console.log(playlist)
+ 
+     setPlaylistIndex(playlistIndex + 1)
+ 
+     let nextSongId = playlist[playlistIndex].videoId
+ 
+     console.log("nextsongId " + nextSongId)
+     console.log("playlistindex " + playlistIndex)
+ 
+     updateContext({
+       videoId: nextSongId,
+     })
+ 
+     context.player.loadVideoById(videoId)
+     
+ */
+    console.log(playlistIndex)
 
-    console.log(playlist)
-
-    setPlaylistIndex(playlistIndex + 1)
-
-    let nextSongId = playlist[playlistIndex].videoId
-
-    console.log("nextsongId " + nextSongId)
-    console.log("playlistindex " + playlistIndex)
-
-    updateContext({
-      videoId: nextSongId,
-    })
-
-    context.player.loadVideoById(videoId)
 
   }
 

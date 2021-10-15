@@ -32,14 +32,12 @@ function SearchPage() {
         history.push('/playingpage/' + videoId)
         updateContext({
             videoId: videoId,
+            queue: [...context.queue, videoId],
             song: song.name,
             artist: song.artist.name,
             album: song.album.name,
             thumbnail: song.thumbnails[0].url
         })
-
-        console.log(song.name)
-        console.log(song.artist.name)
         console.log(context)
 
     }

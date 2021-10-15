@@ -1,7 +1,7 @@
-import React, {useContext, useEffect, useState} from 'react';
-import {useHistory, useParams} from "react-router-dom";
+import React, { useContext, useEffect, useState } from 'react';
+import { useHistory, useParams } from "react-router-dom";
 import '../styles/ArtistPage.css'
-import {PlayerContext} from "../contexts/PlayerContext";
+import { PlayerContext } from "../contexts/PlayerContext";
 import share from "../assets/svgFiles/share-svgrepo-com.svg";
 
 
@@ -29,7 +29,7 @@ function ArtistPage() {
                 img: data.thumbnails[0].url,
                 videoId: data.products.songs.videoId,
                 artistSongs: data.products.songs.content,
-                artistAlbums : data.products.albums.content
+                artistAlbums: data.products.albums.content
             }))
             .then(data => setSongs(artist.artistSongs))
             .then(data => setAlbums(artist.artistAlbums))
@@ -42,10 +42,11 @@ function ArtistPage() {
         updateContext({
             videoId: videoId,
             song: song.name,
-            artist: song.artist.name
+            artist: song.artist.name,
+            queue: [...context.queue, videoId]
         })
-        console.log(song.name)
-        console.log(song.artist.name)
+
+        console.log(context)
 
     }
 
@@ -64,7 +65,7 @@ function ArtistPage() {
         }, 2000);
     }
 
-        return (
+    return (
 
         <div>
             <div className="artistPageHead">
@@ -93,11 +94,11 @@ function ArtistPage() {
             <div className="artistPageAlbumHeader"> Albums </div>
             {albums && albums.map(album => (
                 <div className="result" onClick={() => songClick(album)}>
-                    { <img className="artistPageResultImage" src={album.thumbnails[0].url} height="65px" width="65px" alt="" /> }
+                    {<img className="artistPageResultImage" src={album.thumbnails[0].url} height="65px" width="65px" alt="" />}
                     <div className="resultSong"> {album.name}</div>
-                </div>                ))}
+                </div>))}
 
-                </div>
+        </div>
 
 
 
