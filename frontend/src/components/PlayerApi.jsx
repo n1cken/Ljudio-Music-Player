@@ -103,7 +103,6 @@ function PlayerApi() {
   }
 
   function previousSong() {
-    console.log(playlistIndex)
     player.loadVideoById(context.queue[(playlistIndex - 1)])
     setPlaylistIndex((playlistIndex - 1))
   }
@@ -148,7 +147,6 @@ function PlayerApi() {
      context.player.loadVideoById(videoId)
      
  */
-    console.log(playlistIndex)
     player.loadVideoById(context.queue[(playlistIndex + 1)])
     setPlaylistIndex((playlistIndex + 1))
   }

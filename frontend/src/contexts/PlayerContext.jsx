@@ -7,7 +7,14 @@ function PlayerContextProvider(props) {
   const [context, setContext] = useState(
     {
       videoId: null,
-      queue: [],
+      queue: [{
+        videoId: null,
+        player: null,
+        song: null,
+        artist: null,
+        album: null,
+        thumbnail: null
+      }],
       player: null,
       song: null,
       artist: null,
