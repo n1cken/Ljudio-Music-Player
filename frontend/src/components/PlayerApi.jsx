@@ -103,6 +103,10 @@ function PlayerApi() {
   }
 
   function previousSong() {
+    if (playlistIndex === 1) {
+      console.log("No more songs at the bottom")
+      return
+    }
     player.loadVideoById(context.queue[(playlistIndex - 1)])
     setPlaylistIndex((playlistIndex - 1))
     console.log(context)
@@ -134,25 +138,11 @@ function PlayerApi() {
   }
 
   function nextSong() {
-
-    /* fetchPlaylist()
- 
-     console.log(playlist)
- 
-     setPlaylistIndex(playlistIndex + 1)
- 
-     let nextSongId = playlist[playlistIndex].videoId
- 
-     console.log("nextsongId " + nextSongId)
-     console.log("playlistindex " + playlistIndex)
- 
-     updateContext({
-       videoId: nextSongId,
-     })
- 
-     context.player.loadVideoById(videoId)
-     
- */
+    console.log(context.queue.length)
+    if (playlistIndex === context.queue.length - 1) {
+      console.log("No more songs at the top")
+      return
+    }
     player.loadVideoById(context.queue[(playlistIndex + 1)])
     setPlaylistIndex((playlistIndex + 1))
     console.log(context)
