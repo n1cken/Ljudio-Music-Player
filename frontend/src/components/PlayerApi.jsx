@@ -15,7 +15,7 @@ import SearchField from "./SearchField";
 
 function PlayerApi() {
 
-  const [context, updateContext] = useContext(PlayerContext)
+  const [context, updateContext, setContext] = useContext(PlayerContext)
   const url = 'https://yt-music-api.herokuapp.com/api/yt/song/'
   const urlArtist = 'https://yt-music-api.herokuapp.com/api/yt/artist/'
 
@@ -105,6 +105,12 @@ function PlayerApi() {
   function previousSong() {
     player.loadVideoById(context.queue[(playlistIndex - 1)])
     setPlaylistIndex((playlistIndex - 1))
+    console.log(context)
+    console.log(context.queue[playlistIndex - 1].videoId)
+    console.log(context.queue[playlistIndex - 1].song)
+    console.log(context.queue[playlistIndex - 1].artist)
+    console.log(context.queue[playlistIndex - 1].album)
+    console.log(context.queue[playlistIndex - 1].thumbnail)
   }
 
   function fetchPlaylist() {
@@ -149,6 +155,12 @@ function PlayerApi() {
  */
     player.loadVideoById(context.queue[(playlistIndex + 1)])
     setPlaylistIndex((playlistIndex + 1))
+    console.log(context)
+    console.log(context.queue[playlistIndex + 1].videoId)
+    console.log(context.queue[playlistIndex + 1].song)
+    console.log(context.queue[playlistIndex + 1].artist)
+    console.log(context.queue[playlistIndex + 1].album)
+    console.log(context.queue[playlistIndex + 1].thumbnail)
   }
 
   function playPause() {
@@ -198,8 +210,8 @@ function PlayerApi() {
   return (
 
     <div className="information">
-      <div className="artistText"> {context.song}</div>
-      <div className="artistText">{context.artist} </div>
+      <div className="artistText"> {context.queue[playlistIndex].song}</div>
+      <div className="artistText">{context.queue[playlistIndex].artist} </div>
       <div id="yt-player"></div>
 
       {copyUrl ? <div className="copyClipboard"> Copied to clipboard. </div> : null}
