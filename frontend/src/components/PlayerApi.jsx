@@ -26,7 +26,8 @@ function PlayerApi() {
   const [copyUrl, setCopyUrl] = useState(false)
   const [playlistSongs, setPlaylistSongs] = useState([])
   const [playlistArtist, setPlaylistArtist] = useState([])
-
+  const [userNotificationBottom, setuserNotificationBottom] = useState(false)
+  const [userNotificationTop, setuserNotificationTop] = useState(false)
   const [playlist, setPlaylist] = useState([])
 
   const [playlistIndex, setPlaylistIndex] = useState(0)
@@ -104,7 +105,10 @@ function PlayerApi() {
 
   function previousSong() {
     if (playlistIndex === 1) {
-      console.log("No more songs at the bottom")
+      setuserNotificationBottom(true)
+      setTimeout(() => {
+        setuserNotificationBottom(false)
+      }, 1500);
       return
     }
     player.loadVideoById(context.queue[(playlistIndex - 1)])
@@ -140,7 +144,11 @@ function PlayerApi() {
   function nextSong() {
     console.log(context.queue.length)
     if (playlistIndex === context.queue.length - 1) {
-      console.log("No more songs at the top")
+      setuserNotificationTop(true)
+      setTimeout(() => {
+        setuserNotificationTop(false)
+      }, 2000);
+
       return
     }
     player.loadVideoById(context.queue[(playlistIndex + 1)])
@@ -205,6 +213,9 @@ function PlayerApi() {
       <div id="yt-player"></div>
 
       {copyUrl ? <div className="copyClipboard"> Copied to clipboard. </div> : null}
+
+      {userNotificationTop ? <div className="copyClipboard"> add more by playing more songs! </div> : null}
+      {userNotificationBottom ? <div className="copyClipboard"> No more songs at the bottom </div> : null}
 
       <input type="range"
         value={progress}
