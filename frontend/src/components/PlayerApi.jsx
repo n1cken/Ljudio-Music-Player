@@ -103,6 +103,8 @@ function PlayerApi({ playlistIndex, setPlaylistIndex }) {
 
   function previousSong() {
     if (playlistIndex === 1) {
+      setPlaylistIndex(context.queue.length - 1)
+      player.loadVideoById(context.queue[playlistIndex].videoId)
       setuserNotificationBottom(true)
       setTimeout(() => {
         setuserNotificationBottom(false)
