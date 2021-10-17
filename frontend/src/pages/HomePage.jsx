@@ -5,7 +5,8 @@ import '../styles/StartPage.css'
 function HomePage() {
   return (
     <div className="homePage">
-      This page will show latest songs played
+      <h1>Welcome to the music App Ljudio</h1>
+      <h2>Please search for a song or artist in the search field</h2>
     </div>
   )
 }
