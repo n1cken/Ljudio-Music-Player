@@ -148,6 +148,7 @@ function PlayerApi({ playlistIndex, setPlaylistIndex }) {
     console.log(context.queue.length)
     if (playlistIndex === context.queue.length - 1) {
       setuserNotificationTop(true)
+      setPlaylistIndex(playlistIndex - (context.queue.length - 1))
       setTimeout(() => {
         setuserNotificationTop(false)
       }, 2000);
