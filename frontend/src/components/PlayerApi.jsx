@@ -54,6 +54,7 @@ function PlayerApi({ playlistIndex, setPlaylistIndex }) {
         clearInterval(interval)
         console.log("interval closed")
         nextSong()
+        playPauseImage.src = pause;
       }
     }, 100);
   }, [playlistIndex, context.player])
