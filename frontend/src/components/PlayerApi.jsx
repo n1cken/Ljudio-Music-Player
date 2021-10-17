@@ -41,7 +41,7 @@ function PlayerApi({ playlistIndex, setPlaylistIndex }) {
 
   useEffect(() => {
     setProgress(0)
-    setInterval(() => {
+    var interval = setInterval(() => {
       if (!context.player) return
 
       let currentTime = context.player.getCurrentTime()
@@ -49,8 +49,11 @@ function PlayerApi({ playlistIndex, setPlaylistIndex }) {
       let playedPercent = (currentTime / duration) * 100
 
       setProgress(playedPercent)
+      if (playedPercent === 100) {
+        clearInterval(interval)
+      }
     }, 100);
-  }, [context.player])
+  }, [playlistIndex])
 
   useEffect(() => {
     setTimeout(() => { playSong() }, 100);
