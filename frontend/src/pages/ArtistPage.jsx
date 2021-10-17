@@ -36,7 +36,6 @@ function ArtistPage() {
     }, [songs])
 
     function songClick(song) {
-        console.log(song.name)
         const videoId = song.videoId
         history.push('/playingpage/' + videoId)
         updateContext({
@@ -55,8 +54,6 @@ function ArtistPage() {
             album: song.album.name,
             thumbnail: artist.img
         })
-        console.log(song.img + "here")
-        console.log(context)
 
     }
 
@@ -67,7 +64,6 @@ function ArtistPage() {
             navigator.clipboard.writeText(href);
             setCopyUrl(true)
         } catch {
-            console.log('Failed to copy to clipboard')
         }
 
         setTimeout(() => {

@@ -27,7 +27,6 @@ function SearchPage() {
     }, [songs])
 
     function songClick(song) {
-        console.log(song.name)
         const videoId = song.videoId
         history.push('/playingpage/' + videoId)
         updateContext({
@@ -44,16 +43,13 @@ function SearchPage() {
             album: song.album.name,
             thumbnail: song.thumbnails[0].url
         })
-        console.log(song.thumbnails[0].url + "from searchpage")
-        console.log(context)
 
     }
 
     function artistClick(artist) {
-        console.log(artist.name)
         const browseId = artist.browseId
         history.push('/artistpage/' + browseId)
-        console.log(artist)
+
 
 
 

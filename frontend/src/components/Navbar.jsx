@@ -5,7 +5,6 @@ const initValue = false;
 
 function Navbar(props) {
   const [status, setStatus] = useState(initValue);
-  console.log(status)
   return (
 
     <div className="hamburgerDiv">

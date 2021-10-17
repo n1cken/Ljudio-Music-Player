@@ -12,7 +12,6 @@ function PlayingPage({ playlistIndex }) {
 
 
     useEffect(() => {
-        console.log(playlistIndex + " this is from playingpage")
         fetch(url + videoId)
             .then(res => res.json())
             .then(data => setSong({

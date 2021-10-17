@@ -17,7 +17,6 @@ function PlayerApi({ playlistIndex, setPlaylistIndex }) {
 
   const [context, updateContext, setContext] = useContext(PlayerContext)
   const url = 'https://yt-music-api.herokuapp.com/api/yt/song/'
-  const urlArtist = 'https://yt-music-api.herokuapp.com/api/yt/artist/'
 
   const videoId = context
   const [player, setPlayer] = useState()
@@ -36,7 +35,6 @@ function PlayerApi({ playlistIndex, setPlaylistIndex }) {
     loadPlayer()
     context.videoId
     fetch(url + videoId)
-    console.log(context.player)
   }, [])
 
   useEffect(() => {
@@ -52,7 +50,6 @@ function PlayerApi({ playlistIndex, setPlaylistIndex }) {
       if (currentTime / duration == 1) {
         pauseSong
         clearInterval(interval)
-        console.log("interval closed")
         nextSong()
         playPauseImage.src = pause;
       }
@@ -65,7 +62,6 @@ function PlayerApi({ playlistIndex, setPlaylistIndex }) {
 
   function changeVolume(e) {
     setVolume(e.target.value)
-    console.log(volume)
 
     player.setVolume(volume - 2)
   }
@@ -93,7 +89,6 @@ function PlayerApi({ playlistIndex, setPlaylistIndex }) {
   }
 
   function playSong() {
-    console.log(context)
     player.loadVideoById(context.videoId);
     setPlaylistIndex(context.queue.length - 1)
     document.getElementById("playPauseButton").src = pause;
@@ -116,12 +111,6 @@ function PlayerApi({ playlistIndex, setPlaylistIndex }) {
     }
     player.loadVideoById(context.queue[(playlistIndex - 1)])
     setPlaylistIndex((playlistIndex - 1))
-    console.log(context)
-    console.log(context.queue[playlistIndex - 1].videoId)
-    console.log(context.queue[playlistIndex - 1].song)
-    console.log(context.queue[playlistIndex - 1].artist)
-    console.log(context.queue[playlistIndex - 1].album)
-    console.log(context.queue[playlistIndex - 1].thumbnail)
   }
 
   function fetchPlaylist() {
@@ -145,7 +134,6 @@ function PlayerApi({ playlistIndex, setPlaylistIndex }) {
   }
 
   function nextSong() {
-    console.log(context.queue.length)
     if (playlistIndex === context.queue.length - 1) {
       setuserNotificationTop(true)
       setPlaylistIndex(0)
@@ -157,12 +145,6 @@ function PlayerApi({ playlistIndex, setPlaylistIndex }) {
     }
     player.loadVideoById(context.queue[(playlistIndex + 1)])
     setPlaylistIndex((playlistIndex + 1))
-    console.log(context)
-    console.log(context.queue[playlistIndex + 1].videoId)
-    console.log(context.queue[playlistIndex + 1].song)
-    console.log(context.queue[playlistIndex + 1].artist)
-    console.log(context.queue[playlistIndex + 1].album)
-    console.log(context.queue[playlistIndex + 1].thumbnail)
   }
 
   function playPause() {
@@ -194,7 +176,6 @@ function PlayerApi({ playlistIndex, setPlaylistIndex }) {
       navigator.clipboard.writeText(href);
       setCopyUrl(true)
     } catch {
-      console.log('Failed to copy to clipboard')
     }
 
     setTimeout(() => {

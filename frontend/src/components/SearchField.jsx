@@ -12,12 +12,11 @@ const SearchField = () => {
 
     function updateText(e) {
         setSearch(e.target.value)
-        console.log(e.target.value)
     }
 
     async function submitButton(e) {
         e.preventDefault();
-            history.push('/searchpage/' + search)
+        history.push('/searchpage/' + search)
     }
 
 
