@@ -9,24 +9,27 @@ import SearchPage from "./pages/SearchPage";
 import PlayingPage from "./pages/PlayingPage";
 import HomePage from "./pages/HomePage";
 import ArtistPage from "./pages/ArtistPage";
-import React from "react";
+import React, { useState } from "react";
 import PlayerInformation from "./components/PlayerInformation";
 import PlayerApi from "./components/PlayerApi";
 
 function App() {
+    const [playlistIndex, setPlaylistIndex] = useState(0)
     return (
         <Router>
             <TopBar />
 
             <main>
                 <Route path="/searchpage/:search" exact component={SearchPage} />
-                <Route path="/playingpage" exact component={PlayingPage} />
+                <Route path="/playingpage" >
+                    <PlayingPage playlistIndex={playlistIndex} />
+                </Route>
                 <Route path="/artistpage/:artistId" exact component={ArtistPage} />
                 <Route path="/artistpage" exact component={ArtistPage} />
                 <Route path="/" exact component={HomePage} />
-                <Route path="/playingPage/:videoId" component={PlayingPage} />
+
             </main>
-            <PlayerApi />
+            <PlayerApi playlistIndex={playlistIndex} setPlaylistIndex={setPlaylistIndex} />
         </Router>
     );
 }

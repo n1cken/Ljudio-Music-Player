@@ -13,7 +13,7 @@ import unmute from "../assets/svgFiles/unmute.svg";
 import SearchField from "./SearchField";
 
 
-function PlayerApi() {
+function PlayerApi({ playlistIndex, setPlaylistIndex }) {
 
   const [context, updateContext, setContext] = useContext(PlayerContext)
   const url = 'https://yt-music-api.herokuapp.com/api/yt/song/'
@@ -29,10 +29,6 @@ function PlayerApi() {
   const [userNotificationBottom, setuserNotificationBottom] = useState(false)
   const [userNotificationTop, setuserNotificationTop] = useState(false)
   const [playlist, setPlaylist] = useState([])
-
-  const [playlistIndex, setPlaylistIndex] = useState(0)
-
-
   const history = useHistory()
 
 
@@ -210,6 +206,7 @@ function PlayerApi() {
     <div className="information">
       <div className="artistText"> {context.queue[playlistIndex].song}</div>
       <div className="artistText">{context.queue[playlistIndex].artist} </div>
+
       <div id="yt-player"></div>
 
       {copyUrl ? <div className="copyClipboard"> Copied to clipboard. </div> : null}
