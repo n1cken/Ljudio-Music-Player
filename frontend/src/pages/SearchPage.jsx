@@ -57,7 +57,7 @@ function SearchPage() {
 
     return (
         <div>
-
+            <h2>Search Results:</h2>
             <div className="songHeader">Songs</div>
 
             {songs && songs.map(song => (
