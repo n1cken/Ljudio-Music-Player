@@ -43,9 +43,19 @@ function ArtistPage() {
             videoId: videoId,
             song: song.name,
             artist: song.artist.name,
-            queue: [...context.queue, videoId]
+            queue: [...context.queue, {
+                videoId: videoId,
+                song: song.name,
+                artist: song.artist.name,
+                album: song.album.name,
+                thumbnail: artist.img
+            }],
+            song: song.name,
+            artist: song.artist.name,
+            album: song.album.name,
+            thumbnail: artist.img
         })
-
+        console.log(song.img + "here")
         console.log(context)
 
     }

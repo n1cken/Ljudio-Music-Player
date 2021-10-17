@@ -44,6 +44,7 @@ function SearchPage() {
             album: song.album.name,
             thumbnail: song.thumbnails[0].url
         })
+        console.log(song.thumbnails[0].url + "from searchpage")
         console.log(context)
 
     }
@@ -54,9 +55,7 @@ function SearchPage() {
         history.push('/artistpage/' + browseId)
         console.log(artist)
 
-        updateContext({
-            artistId: browseId
-        })
+
 
     }
 
