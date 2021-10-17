@@ -40,8 +40,6 @@ function ArtistPage() {
         history.push('/playingpage/' + videoId)
         updateContext({
             videoId: videoId,
-            song: song.name,
-            artist: song.artist.name,
             queue: [...context.queue, {
                 videoId: videoId,
                 song: song.name,
