@@ -7,12 +7,28 @@
     "serve": "vite preview"
   },
   "dependencies": {
+    "@capacitor/android": "3.2.5",
+    "@capacitor/core": "^3.2.5",
     "react": "^17.0.0",
     "react-dom": "^17.0.0"
   },
   "devDependencies": {
+    "@capacitor/cli": "^3.2.5",
     "@vitejs/plugin-react": "^1.0.0",
     "react-router-dom": "^5.3.0",
+    "react-scripts": "4.0.3",
     "vite": "^2.6.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

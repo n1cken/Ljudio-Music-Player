@@ -1,0 +1,9 @@
+{
+  "appId": "io.ionic.ljudio",
+  "appName": "ljudio",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "build",
+  "linuxAndroidStudioPath": "home/nicholas/Desktop/Android Studio/bin/studio.sh",
+  "cordova": {}
+}
