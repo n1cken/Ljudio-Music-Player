@@ -136,9 +136,9 @@ function PlayerApi({ playlistIndex, setPlaylistIndex }) {
   }
 
   function nextSong() {
-    if (playlistIndex === context.queue.length-1) {
+    if (playlistIndex === context.queue.length - 1) {
       setuserNotificationTop(true)
-      setPlaylistIndex(1)
+      setPlaylistIndex(0)
       setTimeout(() => {
         setuserNotificationTop(false)
       }, 2000);
